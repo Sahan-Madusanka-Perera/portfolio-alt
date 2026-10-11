@@ -1,26 +1,378 @@
 @import "tailwindcss";
+@source not "../../.impeccable";
+
+/* Class-based dark mode: `.dark` on <html> is toggled by ThemeScript/ThemeProvider.
+   Light = the exercise book. Dark = the classroom blackboard, chalk instead of pen. */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f4f6f8;
+  --paper-2: #e8edf2;
+  --sheet: #fbfcfd;
+  --rule: #c5d5e8;
+  --margin: #dc5f6b;
+  --ink: #1c3a8f;
+  --text: #1b2130;
+  --muted: #515a6b;
+  --pen: #c81e2d;
+  --cover: #6b1b2d;
+  --cover-2: #4f1220;
+  --foil: #dcb46a;
+  --on-cover: #f7ead6;
+  --shadow: 24 34 64;
+  --line: 2rem;
+  --gutter: clamp(2.75rem, 7vw, 6.5rem);
+}
+
+.dark {
+  --paper: #16201b;
+  --paper-2: #1d2923;
+  --sheet: #1a2520;
+  --rule: #26352d;
+  --margin: #74414a;
+  --ink: #eef1e6;
+  --text: #d8ded3;
+  --muted: #9ea99d;
+  --pen: #ff9d8c;
+  --cover: #5b1626;
+  --cover-2: #3c0e19;
+  --foil: #d6ad62;
+  --on-cover: #f7ead6;
+  --shadow: 0 0 0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-sheet: var(--sheet);
+  --color-rule: var(--rule);
+  --color-margin: var(--margin);
+  --color-ink: var(--ink);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-pen: var(--pen);
+  --color-cloth: var(--cover);
+  --color-cloth-2: var(--cover-2);
+  --color-foil: var(--foil);
+  --color-on-cloth: var(--on-cover);
+
+  /* Legacy aliases still read by the games. */
+  --color-background: var(--paper);
+  --color-foreground: var(--text);
+  --color-surface: var(--sheet);
+  --color-border: var(--rule);
+  --color-accent: var(--pen);
+  --color-accent-foreground: var(--paper);
+  --color-ring: var(--pen);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-gemunu), var(--font-geist-sans), sans-serif;
+  --font-hand: var(--font-kalam), "Segoe Print", cursive;
+  --font-sinhala: var(--font-abhaya), var(--font-gemunu), "Iskoola Pota", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--cover) var(--paper-2);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--paper);
+  color: var(--text);
+  font-family: var(--font-sans);
+  caret-color: var(--ink);
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Paper fibre / chalk dust. Fixed, non-interactive, no blend mode (cheap to composite). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .1  0 0 0 0 .13  0 0 0 0 .25  0 0 0 1.1 -.2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.dark body::before {
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.2 -.25'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+::selection {
+  background: color-mix(in oklab, var(--pen) 24%, transparent);
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px dashed var(--pen);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+a {
+  text-decoration-color: color-mix(in oklab, var(--pen) 70%, transparent);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1.5px;
+}
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-hand {
+  font-family: var(--font-hand);
+}
+.font-sinhala {
+  font-family: var(--font-sinhala);
+}
+
+/* Component classes live in a layer so Tailwind utilities can still override them. */
+@layer components {
+/* ---- Paper grammar ------------------------------------------------------ */
+
+/* Blue ruled lines at the book's line pitch. */
+.ruled {
+  background-image: linear-gradient(
+    to bottom,
+    transparent calc(var(--line) - 1px),
+    var(--rule) calc(var(--line) - 1px),
+    var(--rule) var(--line)
+  );
+  background-size: 100% var(--line);
+  background-position: 0 var(--rule-shift, 0px);
+}
+
+/* The double red margin line down the left of every sheet. */
+.margin-rule {
+  position: relative;
+}
+.margin-rule::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: var(--gutter);
+  left: round(down, var(--gutter), 1px);
+  width: 6px;
+  border-inline: 1.5px solid var(--margin);
+  pointer-events: none;
+}
+
+.sheet-x {
+  padding-left: calc(var(--gutter) + clamp(1rem, 3vw, 2.5rem));
+  padding-right: clamp(1rem, 4vw, 3.5rem);
+}
+
+/* Rubber-stamp ink: speckled mask so the impression looks pressed, not printed. */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  border: 3px double currentColor;
+  border-radius: 6px 3px 7px 4px;
+  padding: 0.3em 0.75em 0.2em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 2.05'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 2.05'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>");
+}
+
+/* Primary action: a rubber stamp pressed in blue ink. The inner frame is the
+   stamp's cut border; the speckle overlay is where the ink didn't take. */
+.btn-ink {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  padding: 0.7rem 1.4rem 0.6rem;
+  border-radius: 4px 7px 3px 8px / 7px 3px 8px 4px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: rotate(-1.6deg);
+  transition:
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 200ms ease;
+}
+.btn-ink::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1.5px solid color-mix(in oklab, var(--paper) 80%, transparent);
+  border-radius: 3px 5px 2px 6px / 5px 2px 6px 3px;
+  pointer-events: none;
+}
+.btn-ink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--paper);
+  pointer-events: none;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -6.1'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='s'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 9 -6.1'/></filter><rect width='100%' height='100%' filter='url(%23s)'/></svg>");
+}
+.btn-ink:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+.btn-ink:active {
+  transform: rotate(0deg) scale(0.96);
+  filter: brightness(0.88);
+}
+
+/* Secondary action: words with a red-pen underline that draws on hover. */
+.btn-pen {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.9rem;
+  padding: 0.4rem 0.2rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.btn-pen .pen-underline {
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: 0.35rem;
+  height: 0.6rem;
+  overflow: visible;
+  color: var(--pen);
+}
+.btn-pen .pen-underline path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0.62;
+  transition: stroke-dashoffset 420ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+.btn-pen:hover .pen-underline path,
+.btn-pen:focus-visible .pen-underline path {
+  stroke-dashoffset: 0;
+}
+
+/* ---- Motion: the pen writes, the red pen corrects ----------------------- */
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.draw-on {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw var(--dur, 0.6s) cubic-bezier(0.65, 0, 0.35, 1) var(--delay, 0s) forwards;
+}
+
+@keyframes write {
+  from {
+    clip-path: inset(-80% 100% -80% -4%);
+  }
+  to {
+    clip-path: inset(-80% -6% -80% -4%);
+  }
+}
+.write-on {
+  clip-path: inset(-80% 100% -80% -4%);
+  animation: write var(--dur, 0.8s) cubic-bezier(0.33, 0.7, 0.4, 1) var(--delay, 0s) forwards;
+}
+
+@keyframes ink-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(0.12em);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+.ink-in {
+  opacity: 0;
+  animation: ink-in var(--dur, 0.9s) cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) forwards;
+}
+
+@keyframes scrawl {
+  from {
+    opacity: 0;
+    transform: translateY(0.3em) rotate(-6deg) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--tilt, -3deg));
+  }
+}
+.scrawl-in {
+  opacity: 0;
+  animation: scrawl var(--dur, 0.45s) cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) forwards;
+}
+
+/* Maroon book cloth: a fine two-way weave in the cloth's own light and deep threads. */
+.cloth {
+  background-color: var(--cover);
+  background-image:
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--on-cover) 4%, transparent) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--cover-2) 45%, transparent) 0 2px, transparent 2px 5px);
+}
+}
+
+/* Every animation gets a calm, static fallback: final state, no delay. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom cursor: native cursor hidden only once the overlay is active. */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+html.has-custom-cursor canvas[data-draw-surface] {
+  cursor: crosshair !important;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* The football arena keeps its own floodlit palette whatever the page theme. */
+.arena {
+  --color-accent: #ffd166;
+  --color-accent-foreground: #0b3d1f;
 }

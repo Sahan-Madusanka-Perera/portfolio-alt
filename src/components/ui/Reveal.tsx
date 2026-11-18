@@ -4,7 +4,7 @@ import { createElement, useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 type RevealProps = {
-  as?: "p" | "h1" | "h2" | "h3" | "div" | "span" | "section" | "li" | "article" | "header";
+  as?: "p" | "h1" | "h2" | "h3" | "div" | "span" | "section" | "li" | "ul" | "ol" | "article" | "header";
   children: ReactNode;
   className?: string;
   /** Seconds. */

@@ -18,5 +18,5 @@ export const proofStats: ProofStat[] = [
   { to: 0.99, decimals: 2, label: "outline IoU after compressing a model 4×", href: "/work/holopaint-cloud", project: "HoloPaint Cloud" },
   { to: 16, suffix: "×", label: "faster MongoDB query mix after one round of fixes", href: "/work/dbops-lab", project: "DBOps Lab" },
   { to: 179, label: "lessons across four A/L ICT platforms", href: "#more-work", project: "A/L ICT platforms" },
-  { to: 2, label: "peer-reviewed papers", href: "#research", project: "Research" },
+  { to: 2, label: "published papers", href: "#research", project: "Research" },
 ];

@@ -20,6 +20,7 @@ import { useTheme } from "@/components/providers/ThemeProvider";
 import { flagships } from "@/data/projects";
 import { allSections, site } from "@/data/site";
 import { cn } from "@/lib/cn";
+import { tick } from "@/lib/sound";
 
 type Item = {
   id: string;
@@ -192,6 +193,7 @@ export function CommandPalette() {
       setActive((safeActive - 1 + filtered.length) % Math.max(filtered.length, 1));
     } else if (event.key === "Enter") {
       event.preventDefault();
+      tick("select");
       filtered[safeActive]?.run();
     }
   }
@@ -245,7 +247,10 @@ export function CommandPalette() {
                 aria-selected={index === safeActive}
                 data-index={index}
                 onPointerMove={() => setActive(index)}
-                onClick={() => item.run()}
+                onClick={() => {
+                  tick("select");
+                  item.run();
+                }}
                 className={cn(
                   "flex cursor-pointer items-center gap-3 rounded-[14px] px-3 py-2.5 text-[0.9375rem] transition-colors duration-150",
                   index === safeActive ? "bg-fg/[0.07] text-fg" : "text-fg-2",

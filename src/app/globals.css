@@ -18,6 +18,9 @@
   --line-2: rgb(236 233 226 / 0.18);
   --accent: #8aa2ff;
   --accent-ink: #050505;
+  --ok: #7fd1a3;
+  --warn: #e8b04a;
+  --crit: #ff7a6b;
   --glass: rgb(255 255 255 / 0.04);
   --glass-rim: rgb(255 255 255 / 0.12);
   --shadow: 0 0 0;
@@ -41,6 +44,9 @@
   --line-2: rgb(20 20 19 / 0.22);
   --accent: #2b46c9;
   --accent-ink: #f6f5f1;
+  --ok: #1d7a4a;
+  --warn: #8a5a00;
+  --crit: #b3261e;
   --glass: rgb(255 255 255 / 0.45);
   --glass-rim: rgb(20 20 19 / 0.1);
   --shadow: 40 40 36;
@@ -60,6 +66,9 @@
   --color-line-2: var(--line-2);
   --color-accent: var(--accent);
   --color-accent-ink: var(--accent-ink);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-crit: var(--crit);
 
   --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;

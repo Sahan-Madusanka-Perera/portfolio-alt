@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { openPalette } from "@/components/layout/CommandPalette";
+import { SoundToggle } from "@/components/layout/SoundToggle";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import { navSections, site } from "@/data/site";
@@ -99,6 +100,7 @@ export function SiteNav() {
             <CommandIcon aria-hidden size={15} />
             <span className="font-mono text-[0.8125rem]">K</span>
           </button>
+          <SoundToggle />
           <ThemeToggle />
           <a
             href={site.cvUrl}

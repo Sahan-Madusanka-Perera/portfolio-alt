@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<rect width="1600" height="1000" fill="#0b0b0b"/>
+<circle cx="104" cy="80" r="9" fill="rgba(236,233,226,0.12)"/><circle cx="136" cy="80" r="9" fill="rgba(236,233,226,0.12)"/><circle cx="168" cy="80" r="9" fill="rgba(236,233,226,0.12)"/>
+<text x="1504" y="88" text-anchor="end" fill="rgba(236,233,226,0.34)" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="22">results/m2-health-faults.txt</text><text x="96" y="150" fill="rgba(236,233,226,0.34)" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="26">$ dbops health</text>
+<text x="96" y="210" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">DBOps health  2026-11-17 19:19:58</text>
+<text x="96" y="247" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">oracle</text>
+<text x="96" y="284" fill="#e8c27a" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  WARN    long-running (&gt;60s)        2              sid 59,45118 SHOP sql_id bjmjvyj6…</text>
+<text x="96" y="321" fill="#e8c27a" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  WARN    blocked sessions           1              sid 208 blocked by 59 for 66s on …</text>
+<text x="96" y="358" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">mariadb-primary</text>
+<text x="96" y="395" fill="#e8c27a" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  WARN    long-running (&gt;60s)        1              id 366 shop 66s: SELECT SLEEP(75)</text>
+<text x="96" y="432" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">mariadb-replica</text>
+<text x="96" y="469" fill="#ff8f7d" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  CRIT    replication                IO=Yes SQL=No  stopped</text>
+<text x="96" y="506" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">mongo1</text>
+<text x="96" y="543" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">mongo2</text>
+<text x="96" y="580" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">mongo3</text>
+<text x="96" y="617" fill="#ff8f7d" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  CRIT    reachable                                 127.0.0.1:27019: [Errno 61] Conne…</text>
+<text x="96" y="654" fill="#ff8f7d" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  CRIT    container                                 dbops-mongo3 is not running</text>
+<text x="96" y="691" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">postgres</text>
+<text x="96" y="728" fill="#e8c27a" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  WARN    long-running (&gt;60s)        1              pid 1551 postgres 67s: SELECT pg_…</text>
+<text x="96" y="765" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">rs0</text>
+<text x="96" y="802" fill="#ff8f7d" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="24" xml:space="preserve">  CRIT    member mongo3:27017        (not reachable/healthy) Error connecting to mong…</text>
+<rect x="96" y="849" width="1408" height="1" fill="rgba(236,233,226,0.12)"/>
+<text x="96" y="903" fill="#ff8f7d" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="30" font-weight="600">CRIT    44 OK, 4 WARN, 4 CRIT, 0 UNKNOWN</text>
+</svg>

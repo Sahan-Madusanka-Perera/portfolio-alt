@@ -43,3 +43,7 @@ next-env.d.ts
 .impeccable/
 DESIGN.md
 PRODUCT.md
+# python tooling for scripts/make-portrait.py
+scripts/.venv/
+scripts/.cache/
+__pycache__/

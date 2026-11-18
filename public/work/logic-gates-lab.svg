@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+<rect width="1600" height="1000" fill="#0b0b0b"/>
+<text x="150" y="318" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="30">A = 1</text>
+<text x="150" y="718" fill="rgba(236,233,226,0.62)" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="30">B = 0</text>
+<path d="M300 308 H380 M380 308 V250 H560 M380 308 V366 H560" stroke="#ece9e2" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path d="M300 708 H380 M380 708 V650 H560 M380 708 V766 H560" stroke="rgba(236,233,226,0.62)" stroke-width="4" stroke-dasharray="14 12" fill="none" stroke-linecap="round"/>
+<path d="M560 238 h70 a70 70 0 0 1 0 140 h-70 z" stroke="#ece9e2" stroke-width="4" fill="#0b0b0b"/><circle cx="714" cy="308" r="13" stroke="#ece9e2" stroke-width="4" fill="#0b0b0b"/>
+<path d="M560 638 h70 a70 70 0 0 1 0 140 h-70 z" stroke="#ece9e2" stroke-width="4" fill="#0b0b0b"/><circle cx="714" cy="708" r="13" stroke="#ece9e2" stroke-width="4" fill="#0b0b0b"/>
+<path d="M727 308 H860 V450 H1000" stroke="rgba(236,233,226,0.62)" stroke-width="4" stroke-dasharray="14 12" fill="none" stroke-linecap="round"/>
+<path d="M727 708 H860 V566 H1000" stroke="#ece9e2" stroke-width="7" fill="none" stroke-linecap="round"/>
+<text x="760" y="290" fill="rgba(236,233,226,0.62)" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="28">0</text>
+<text x="760" y="690" fill="#ece9e2" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="28">1</text>
+<path d="M1000 438 h70 a70 70 0 0 1 0 140 h-70 z" stroke="#ece9e2" stroke-width="4" fill="#0b0b0b"/><circle cx="1154" cy="508" r="13" stroke="#ece9e2" stroke-width="4" fill="#0b0b0b"/>
+<path d="M1167 508 H1420" stroke="#ece9e2" stroke-width="7" fill="none" stroke-linecap="round"/>
+<text x="1300" y="488" fill="#8aa2ff" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="30">A OR B = 1</text>
+<text x="150" y="160" fill="#ece9e2" font-family="'Inter Tight', ui-sans-serif, system-ui, sans-serif" font-size="44" font-weight="300">OR from NAND</text>
+<text x="150" y="208" fill="rgba(236,233,226,0.34)" font-family="'Inter Tight', ui-sans-serif, system-ui, sans-serif" font-size="26">One of the lab's eight build challenges. A 1 is a solid line, a 0 is dashed.</text>
+</svg>

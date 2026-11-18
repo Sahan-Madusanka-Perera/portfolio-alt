@@ -1,0 +1,2348 @@
+{
+ "projects": {
+  "ADSA": {
+   "lines": {
+    "Jupyter": 1036,
+    "Python": 859,
+    "Shell": 0
+   },
+   "deps": [
+    "folium",
+    "googlemaps",
+    "ipywidgets",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scipy",
+    "seaborn"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 7,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "AR_Draw": {
+   "lines": {
+    "C++": 529,
+    "Dart": 304,
+    "C": 184,
+    "Kotlin": 84,
+    "Swift": 68,
+    "Java": 46,
+    "HTML": 38,
+    "Shell": 28,
+    "Python": 27
+   },
+   "deps": [
+    "flutter"
+   ],
+   "infra": {
+    "Xcode": 2
+   },
+   "manifests": [
+    "pubspec.yaml",
+    "android/build.gradle.kts",
+    "android/app/build.gradle.kts"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Ape-Ammage-Thunapaha-Ecom": {
+   "lines": {
+    "TypeScript": 24345,
+    "CSS": 216,
+    "SQL": 189,
+    "JavaScript": 17
+   },
+   "deps": [
+    "@prisma/adapter-pg",
+    "@prisma/client",
+    "@tailwindcss/turbopack",
+    "@types/node",
+    "@types/pg",
+    "@types/react",
+    "@types/react-dom",
+    "bcryptjs",
+    "dotenv",
+    "eslint",
+    "eslint-config-next",
+    "jose",
+    "lucide-react",
+    "next",
+    "pg",
+    "prisma",
+    "react",
+    "react-dom",
+    "server-only",
+    "sharp",
+    "tailwindcss",
+    "tsx",
+    "typescript",
+    "zod"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "ArduinoForAL": {
+   "lines": {
+    "TypeScript": 24708,
+    "CSS": 525,
+    "JavaScript": 89,
+    "HTML": 58
+   },
+   "deps": [
+    "@fontsource-variable/archivo",
+    "@fontsource-variable/jetbrains-mono",
+    "@tailwindcss/vite",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vercel/analytics",
+    "@vitejs/plugin-react",
+    "react",
+    "react-dom",
+    "react-router-dom",
+    "tailwindcss",
+    "typescript",
+    "vite",
+    "zustand"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 3,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Asp_c_A": {
+   "lines": {
+    "Python": 412
+   },
+   "deps": [
+    "streamlit"
+   ],
+   "infra": {},
+   "manifests": [
+    "asp_llm_orchestrator_midloop/requirements.txt"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Astro Web Page": {
+   "lines": {
+    "TypeScript": 11516,
+    "CSS": 380,
+    "SQL": 43,
+    "JavaScript": 22
+   },
+   "deps": [
+    "@hookform/resolvers",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-dropdown-menu",
+    "@radix-ui/react-label",
+    "@radix-ui/react-select",
+    "@radix-ui/react-slot",
+    "@radix-ui/react-toast",
+    "@supabase/supabase-js",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "class-variance-authority",
+    "clsx",
+    "date-fns",
+    "eslint",
+    "eslint-config-next",
+    "framer-motion",
+    "gsap",
+    "lucide-react",
+    "next",
+    "next-themes",
+    "pdfjs-dist",
+    "react",
+    "react-dom",
+    "react-hook-form",
+    "sharp",
+    "sonner",
+    "tailwind-merge",
+    "tailwindcss",
+    "tw-animate-css",
+    "typescript",
+    "zod"
+   ],
+   "infra": {},
+   "manifests": [
+    "astro-club-website/package.json"
+   ],
+   "git": {
+    "repos": [
+     "astro-club-website"
+    ],
+    "mine": 28,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Big Data Analytics": {
+   "lines": {
+    "Python": 3129
+   },
+   "deps": [
+    "dash",
+    "gunicorn",
+    "matplotlib",
+    "numpy",
+    "openpyxl",
+    "pandas",
+    "plotly",
+    "scipy",
+    "seaborn"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Big_Data_Analytics_Assignment_1": {
+   "lines": {
+    "Python": 1738
+   },
+   "deps": [
+    "dash",
+    "gunicorn",
+    "matplotlib",
+    "numpy",
+    "openpyxl",
+    "pandas",
+    "plotly",
+    "scipy",
+    "seaborn"
+   ],
+   "infra": {},
+   "manifests": [
+    "Python Approach/requirements.txt"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Bizguide": {
+   "lines": {
+    "Astro": 3471,
+    "CSS": 530,
+    "TypeScript": 525,
+    "JavaScript": 20
+   },
+   "deps": [
+    "@astrojs/sitemap",
+    "@fontsource-variable/mona-sans",
+    "@tailwindcss/vite",
+    "astro",
+    "playwright-core",
+    "sharp",
+    "tailwindcss",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "CSS_Test": {
+   "lines": {
+    "HTML": 24,
+    "CSS": 6
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Case Study 4": {
+   "lines": {
+    "TypeScript": 9668,
+    "C": 2688,
+    "C++": 2648,
+    "Python": 538,
+    "JavaScript": 418,
+    "CSS": 305,
+    "Kotlin": 103
+   },
+   "deps": [
+    "@ai-sdk/google",
+    "@ai-sdk/react",
+    "@babel/core",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-select",
+    "@radix-ui/react-slider",
+    "@radix-ui/react-slot",
+    "@radix-ui/react-tabs",
+    "@radix-ui/react-tooltip",
+    "@react-native-community/slider",
+    "@tailwindcss/postcss",
+    "@tailwindcss/typography",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "ai",
+    "class-variance-authority",
+    "clsx",
+    "com.android.tools.build:gradle",
+    "com.facebook.fresco:animated-gif",
+    "com.facebook.fresco:animated-webp",
+    "com.facebook.fresco:webpsupport",
+    "com.facebook.react:hermes-android",
+    "com.facebook.react:react-android",
+    "com.facebook.react:react-native-gradle-plugin",
+    "duck-duck-scrape",
+    "eslint",
+    "eslint-config-next",
+    "expo",
+    "expo-constants",
+    "expo-font",
+    "expo-linear-gradient",
+    "expo-linking",
+    "expo-router",
+    "expo-splash-screen",
+    "expo-status-bar",
+    "expo-system-ui",
+    "expo-web-browser",
+    "export:embed",
+    "lucide-react",
+    "next",
+    "org.jetbrains.kotlin:kotlin-gradle-plugin",
+    "org.webkit:android-jsc",
+    "org.webkit:android-jsc-intl",
+    "react",
+    "react-dom",
+    "react-markdown",
+    "react-native",
+    "react-native-gesture-handler",
+    "react-native-reanimated",
+    "react-native-safe-area-context",
+    "react-native-screens",
+    "react-native-web",
+    "recharts",
+    "tailwind-merge",
+    "tailwindcss",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "vehicle-financing-app/package.json",
+    "vehicle-financing-mobile/package.json",
+    "vehicle-financing-mobile/android/build.gradle",
+    "vehicle-financing-mobile/android/app/build.gradle"
+   ],
+   "git": {
+    "repos": [
+     "vehicle-financing-app",
+     "vehicle-financing-mobile"
+    ],
+    "mine": 4,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Chess_Project": {
+   "lines": {
+    "TypeScript": 18083,
+    "CSS": 2343,
+    "Swift": 41,
+    "HTML": 27,
+    "JavaScript": 22,
+    "C": 3
+   },
+   "deps": [
+    "@chessos/content",
+    "@chessos/core",
+    "@chessos/tokens",
+    "@fontsource-variable/inter",
+    "@fontsource/jetbrains-mono",
+    "@playwright/test",
+    "@react-native-async-storage/async-storage",
+    "@testing-library/dom",
+    "@testing-library/react",
+    "@testing-library/user-event",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vitejs/plugin-react",
+    "chessops",
+    "dexie",
+    "expo",
+    "expo-constants",
+    "expo-linking",
+    "expo-router",
+    "expo-status-bar",
+    "fake-indexeddb",
+    "jsdom",
+    "lucide-react",
+    "lucide-react-native",
+    "react",
+    "react-dom",
+    "react-native",
+    "react-native-safe-area-context",
+    "react-native-screens",
+    "react-native-svg",
+    "react-native-webview",
+    "stockfish",
+    "ts-fsrs",
+    "typescript",
+    "vite",
+    "vite-plugin-pwa",
+    "vitest",
+    "wouter",
+    "zustand"
+   ],
+   "infra": {
+    "Xcode": 1
+   },
+   "manifests": [
+    "package.json",
+    "packages/core/package.json",
+    "packages/content/package.json",
+    "packages/tokens/package.json",
+    "apps/web/package.json",
+    "apps/mobile/package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "DA": {
+   "lines": {
+    "Jupyter": 144,
+    "Python": 71
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "DA_Assignment": {
+   "lines": {
+    "Jupyter": 10603,
+    "Python": 4087,
+    "Shell": 18
+   },
+   "deps": [
+    "joblib",
+    "lightgbm",
+    "numpy",
+    "pandas",
+    "plotly",
+    "scikit-learn",
+    "streamlit",
+    "xgboost"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt",
+    "streamlit_deployment/requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     ".",
+     "streamlit_deployment"
+    ],
+    "mine": 4,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Emotion_v2": {
+   "lines": {
+    "Jupyter": 4571
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Final Project Version": {
+   "lines": {
+    "Jupyter": 7253,
+    "Python": 1214,
+    "Shell": 43
+   },
+   "deps": [
+    "authors",
+    "description",
+    "h5py",
+    "imbalanced-learn",
+    "ipywidgets",
+    "jupyter",
+    "jupyterlab",
+    "keras",
+    "librosa",
+    "matplotlib",
+    "name",
+    "notebook",
+    "numpy",
+    "opencv-contrib-python-headless",
+    "opencv-python-headless",
+    "pandas",
+    "pillow",
+    "plotly",
+    "requires-python",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "soundfile",
+    "tensorflow",
+    "torch",
+    "torchvision",
+    "tqdm",
+    "version"
+   ],
+   "infra": {
+    "Dockerfile": 1,
+    "Compose": 1
+   },
+   "manifests": [
+    "Music_Recommendation_System/requirements.txt",
+    "Music_Recommendation_System/pyproject.toml"
+   ],
+   "git": {
+    "repos": [
+     "Music_Recommendation_System"
+    ],
+    "mine": 65,
+    "others": 57,
+    "other_authors": {
+     "Azeemhaleem": 19,
+     "Hirunika SuwandaArachchi": 11,
+     "Mohamed Azeem": 10,
+     "Heshani Maddage": 7,
+     "xSuneth": 7
+    }
+   }
+  },
+  "Game_Development_Group_Assignmenr": {
+   "lines": {
+    "TypeScript": 1829,
+    "CSS": 46,
+    "JavaScript": 22
+   },
+   "deps": [
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "clsx",
+    "eslint",
+    "eslint-config-next",
+    "framer-motion",
+    "lucide-react",
+    "next",
+    "react",
+    "react-dom",
+    "tailwind-merge",
+    "tailwindcss",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "naga-mind-map/package.json"
+   ],
+   "git": {
+    "repos": [
+     "naga-mind-map"
+    ],
+    "mine": 6,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Hand Gesture Recognition": {
+   "lines": {
+    "Python": 1115,
+    "Shell": 24
+   },
+   "deps": [
+    "kagglehub",
+    "matplotlib",
+    "mediapipe",
+    "numpy",
+    "opencv-python",
+    "pillow",
+    "scikit-learn",
+    "seaborn",
+    "tensorflow"
+   ],
+   "infra": {},
+   "manifests": [
+    "HoloBrush/requirements.txt"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "HoloDraw": {
+   "lines": {
+    "Python": 4790,
+    "C++": 2905,
+    "Jupyter": 493,
+    "C": 412,
+    "Shell": 2
+   },
+   "deps": [
+    "mediapipe",
+    "numpy",
+    "opencv-python",
+    "torch",
+    "torchvision"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 3,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "ITMentor": {
+   "lines": {
+    "TypeScript": 10161,
+    "CSS": 169,
+    "JavaScript": 75
+   },
+   "deps": [
+    "@radix-ui/react-slot",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "ai",
+    "class-variance-authority",
+    "clsx",
+    "eslint",
+    "eslint-config-next",
+    "framer-motion",
+    "lucide-react",
+    "media-chrome",
+    "next",
+    "react",
+    "react-dom",
+    "tailwind-merge",
+    "tailwindcss",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "JobRec": {
+   "lines": {
+    "HTML": 2233,
+    "Java": 1736
+   },
+   "deps": [
+    "bootstrap",
+    "h2",
+    "jquery",
+    "mysql-connector-j",
+    "recruitment-system",
+    "spring-boot-devtools",
+    "spring-boot-maven-plugin",
+    "spring-boot-starter-data-jpa",
+    "spring-boot-starter-parent",
+    "spring-boot-starter-test",
+    "spring-boot-starter-thymeleaf",
+    "spring-boot-starter-validation",
+    "spring-boot-starter-web"
+   ],
+   "infra": {
+    "GitHub Actions": 1
+   },
+   "manifests": [
+    "pom.xml"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 4,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "LibraryManagementSystem": {
+   "lines": {
+    "HTML": 5506,
+    "PHP": 4188,
+    "CSS": 778,
+    "JavaScript": 573
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "LogTriage": {
+   "lines": {
+    "Java": 1092
+   },
+   "deps": [
+    "junit-jupiter",
+    "logtriage",
+    "maven-jar-plugin",
+    "maven-surefire-plugin"
+   ],
+   "infra": {
+    "GitHub Actions": 1
+   },
+   "manifests": [
+    "pom.xml"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Logic Gates Platform": {
+   "lines": {
+    "TypeScript": 16554,
+    "CSS": 386,
+    "HTML": 30,
+    "JavaScript": 18
+   },
+   "deps": [
+    "@axe-core/playwright",
+    "@eslint/js",
+    "@playwright/test",
+    "@tailwindcss/vite",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vitejs/plugin-react",
+    "eslint",
+    "eslint-plugin-react-hooks",
+    "fast-check",
+    "globals",
+    "react",
+    "react-dom",
+    "react-router",
+    "tailwindcss",
+    "typescript",
+    "typescript-eslint",
+    "vite",
+    "vitest"
+   ],
+   "infra": {
+    "Vercel": 1
+   },
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 2,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Logistic Regression": {
+   "lines": {
+    "Jupyter": 479
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Music_Recommendation_System": {
+   "lines": {
+    "Jupyter": 8902,
+    "Python": 729,
+    "Shell": 112
+   },
+   "deps": [
+    "authors",
+    "description",
+    "ipykernel",
+    "ipywidgets",
+    "joblib",
+    "jupyter",
+    "jupyterlab",
+    "keras",
+    "matplotlib",
+    "name",
+    "numpy",
+    "opencv-contrib-python",
+    "opencv-python",
+    "pandas",
+    "pathlib",
+    "pillow",
+    "plotly",
+    "requires-python",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "streamlit",
+    "tensorflow",
+    "torch",
+    "torchvision",
+    "tqdm",
+    "version",
+    "yt-dlp"
+   ],
+   "infra": {
+    "Dockerfile": 1,
+    "Compose": 1
+   },
+   "manifests": [
+    "requirements.txt",
+    "pyproject.toml",
+    "requirements_streamlit.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 60,
+    "others": 31,
+    "other_authors": {
+     "Azeemhaleem": 15,
+     "Mohamed Azeem": 6,
+     "Heshani Maddage": 5,
+     "xSuneth": 3,
+     "Suneth Chathuranga": 1
+    }
+   }
+  },
+  "Naga_Gothrika": {
+   "lines": {
+    "JavaScript": 522,
+    "CSS": 478,
+    "HTML": 119
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Neko and Kopi": {
+   "lines": {
+    "JavaScript": 800,
+    "HTML": 754,
+    "CSS": 666
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Networking_Visual_Aided_Learning": {
+   "lines": {
+    "TypeScript": 19168,
+    "HTML": 7684,
+    "Python": 1320,
+    "JavaScript": 730,
+    "CSS": 355
+   },
+   "deps": [
+    "@fontsource-variable/inter",
+    "@fontsource-variable/jetbrains-mono",
+    "@tailwindcss/vite",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vercel/analytics",
+    "@vitejs/plugin-react",
+    "clsx",
+    "motion",
+    "oxlint",
+    "playwright",
+    "react",
+    "react-dom",
+    "react-router-dom",
+    "tailwindcss",
+    "typescript",
+    "vite"
+   ],
+   "infra": {
+    "Vercel": 1
+   },
+   "manifests": [
+    "package.json",
+    "videos/signallab-promo/package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 11,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "OL_Question_Platform": {
+   "lines": {
+    "TypeScript": 21071,
+    "Python": 2174,
+    "CSS": 775,
+    "SQL": 613,
+    "JavaScript": 3
+   },
+   "deps": [
+    "@radix-ui/react-accordion",
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-dropdown-menu",
+    "@radix-ui/react-label",
+    "@radix-ui/react-progress",
+    "@radix-ui/react-radio-group",
+    "@radix-ui/react-select",
+    "@radix-ui/react-separator",
+    "@radix-ui/react-slot",
+    "@radix-ui/react-tabs",
+    "@radix-ui/react-tooltip",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vitejs/plugin-react",
+    "class-variance-authority",
+    "clsx",
+    "date-fns",
+    "dotenv",
+    "drizzle-kit",
+    "drizzle-orm",
+    "lucide-react",
+    "next",
+    "postcss",
+    "postgres",
+    "react",
+    "react-dom",
+    "server-only",
+    "tailwind-merge",
+    "tailwindcss",
+    "tsx",
+    "typescript",
+    "vitest",
+    "zod"
+   ],
+   "infra": {
+    "GitHub Actions": 1
+   },
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 4,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "OS_Assignment": {
+   "lines": {},
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 2,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "OS_Learning_Platform": {
+   "lines": {
+    "TypeScript": 22217,
+    "HTML": 4712,
+    "Python": 521,
+    "JavaScript": 373,
+    "CSS": 317
+   },
+   "deps": [
+    "@tailwindcss/vite",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vercel/analytics",
+    "@vitejs/plugin-react",
+    "motion",
+    "oxlint",
+    "playwright",
+    "react",
+    "react-dom",
+    "react-router-dom",
+    "tailwindcss",
+    "typescript",
+    "vite",
+    "zustand"
+   ],
+   "infra": {
+    "Vercel": 1
+   },
+   "manifests": [
+    "app/package.json",
+    "videos/oslearning-promo/package.json",
+    "videos/oslearning-promo/tools/package.json"
+   ],
+   "git": {
+    "repos": [
+     "app"
+    ],
+    "mine": 3,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Pascal_Programming_Platform": {
+   "lines": {
+    "TypeScript": 20300,
+    "CSS": 6756,
+    "HTML": 6336,
+    "Pascal": 373,
+    "JavaScript": 128
+   },
+   "deps": [
+    "@fontsource-variable/bricolage-grotesque",
+    "@fontsource-variable/figtree",
+    "@fontsource-variable/jetbrains-mono",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vitejs/plugin-react",
+    "lucide-react",
+    "react",
+    "react-dom",
+    "react-router-dom",
+    "typescript",
+    "vite",
+    "vitest"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json",
+    "videos/pascalpath-promo/package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 2,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Psoriasis ML": {
+   "lines": {
+    "Python": 1680,
+    "Jupyter": 443
+   },
+   "deps": [
+    "albumentations",
+    "joblib",
+    "kaggle",
+    "matplotlib",
+    "numpy",
+    "opencv-python",
+    "pandas",
+    "scikit-image",
+    "scikit-learn",
+    "seaborn",
+    "tensorflow",
+    "tqdm"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Python_AL_Learning_Platform": {
+   "lines": {
+    "TypeScript": 23109,
+    "JavaScript": 620,
+    "CSS": 361
+   },
+   "deps": [
+    "@codemirror/autocomplete",
+    "@codemirror/commands",
+    "@codemirror/lang-python",
+    "@codemirror/lang-sql",
+    "@codemirror/language",
+    "@codemirror/state",
+    "@codemirror/view",
+    "@tailwindcss/postcss",
+    "@types/canvas-confetti",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@uiw/react-codemirror",
+    "canvas-confetti",
+    "clsx",
+    "eslint",
+    "eslint-config-next",
+    "idb-keyval",
+    "lottie-react",
+    "lucide-react",
+    "motion",
+    "next",
+    "react",
+    "react-dom",
+    "tailwind-merge",
+    "tailwindcss",
+    "typescript",
+    "zustand"
+   ],
+   "infra": {},
+   "manifests": [
+    "app/package.json"
+   ],
+   "git": {
+    "repos": [
+     "app"
+    ],
+    "mine": 5,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "QR_attendance_system": {
+   "lines": {
+    "JavaScript": 4409,
+    "TypeScript": 927,
+    "CSS": 257,
+    "SQL": 209,
+    "Shell": 155,
+    "HTML": 18
+   },
+   "deps": [
+    "@eslint/js",
+    "@fingerprintjs/fingerprintjs",
+    "@fontsource-variable/archivo",
+    "@fontsource-variable/geist",
+    "@fontsource-variable/martian-mono",
+    "@types/react",
+    "@types/react-dom",
+    "@vitejs/plugin-react",
+    "autoprefixer",
+    "bcryptjs",
+    "class-variance-authority",
+    "clsx",
+    "cors",
+    "csv-writer",
+    "dotenv",
+    "eslint",
+    "eslint-plugin-react-hooks",
+    "eslint-plugin-react-refresh",
+    "exceljs",
+    "express",
+    "express-rate-limit",
+    "globals",
+    "helmet",
+    "jsonwebtoken",
+    "leaflet",
+    "lucide-react",
+    "next-themes",
+    "pg",
+    "postcss",
+    "qrcode",
+    "radix-ui",
+    "react",
+    "react-dom",
+    "react-leaflet",
+    "react-router-dom",
+    "shadcn",
+    "sonner",
+    "tailwind-merge",
+    "tailwindcss",
+    "tailwindcss-animate",
+    "tw-animate-css",
+    "vite"
+   ],
+   "infra": {
+    "Compose": 1,
+    "GitHub Actions": 1
+   },
+   "manifests": [
+    "server/package.json",
+    "client/package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 5,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Reint_Assignment": {
+   "lines": {
+    "TypeScript": 4958,
+    "Python": 3045,
+    "CSS": 1247,
+    "HTML": 28
+   },
+   "deps": [
+    "@fontsource-variable/jetbrains-mono",
+    "@tanstack/react-query",
+    "@testing-library/dom",
+    "@testing-library/jest-dom",
+    "@testing-library/react",
+    "@testing-library/user-event",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vitejs/plugin-react",
+    "addopts",
+    "description",
+    "fastapi",
+    "files",
+    "filterwarnings",
+    "httpx",
+    "httpx2",
+    "jsdom",
+    "line-length",
+    "mypy",
+    "name",
+    "omit",
+    "oxlint",
+    "plugins",
+    "prettier",
+    "pydantic",
+    "pydantic-settings",
+    "pytest",
+    "pytest-cov",
+    "python_version",
+    "pythonpath",
+    "react",
+    "react-dom",
+    "react-router",
+    "recharts",
+    "requires-python",
+    "ruff",
+    "select",
+    "show_missing",
+    "skip_covered",
+    "source",
+    "strict",
+    "target-version",
+    "testpaths",
+    "typescript",
+    "uvicorn",
+    "version",
+    "vite",
+    "vitest"
+   ],
+   "infra": {
+    "Vercel": 1,
+    "Dockerfile": 1,
+    "Compose": 1,
+    "GitHub Actions": 1
+   },
+   "manifests": [
+    "requirements.txt",
+    "frontend/package.json",
+    "backend/pyproject.toml",
+    "backend/requirements-dev.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 29,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Sahan-Madusanka-Perera": {
+   "lines": {},
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 5,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "UniProject": {
+   "lines": {
+    "TypeScript": 3941,
+    "JavaScript": 7
+   },
+   "deps": [
+    "@expo/vector-icons",
+    "@react-navigation/native",
+    "@types/react",
+    "expo",
+    "expo-constants",
+    "expo-font",
+    "expo-linear-gradient",
+    "expo-linking",
+    "expo-router",
+    "expo-splash-screen",
+    "expo-status-bar",
+    "expo-web-browser",
+    "react",
+    "react-dom",
+    "react-native",
+    "react-native-reanimated",
+    "react-native-safe-area-context",
+    "react-native-screens",
+    "react-native-web",
+    "react-native-worklets",
+    "react-test-renderer",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Wai Wai Japanese Restaurant": {
+   "lines": {},
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Web Dev Study Partner": {
+   "lines": {
+    "TypeScript": 21420,
+    "PHP": 539,
+    "CSS": 398,
+    "JavaScript": 373,
+    "HTML": 34
+   },
+   "deps": [
+    "@codemirror/commands",
+    "@codemirror/lang-css",
+    "@codemirror/lang-html",
+    "@codemirror/lang-javascript",
+    "@codemirror/lang-php",
+    "@codemirror/lang-sql",
+    "@codemirror/language",
+    "@codemirror/state",
+    "@codemirror/theme-one-dark",
+    "@codemirror/view",
+    "@lezer/highlight",
+    "@php-wasm/web",
+    "@tailwindcss/vite",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@uiw/react-codemirror",
+    "@vercel/analytics",
+    "@vitejs/plugin-react",
+    "lucide-react",
+    "oxlint",
+    "puppeteer-core",
+    "react",
+    "react-dom",
+    "react-router-dom",
+    "tailwindcss",
+    "typescript",
+    "vite",
+    "zustand"
+   ],
+   "infra": {},
+   "manifests": [
+    "app/package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 6,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "YT channel": {
+   "lines": {
+    "TypeScript": 19316,
+    "JavaScript": 3912
+   },
+   "deps": [
+    "@googleapis/youtube",
+    "@remotion/bundler",
+    "@remotion/cli",
+    "@remotion/eslint-config-flat",
+    "@remotion/layout-utils",
+    "@remotion/media",
+    "@remotion/renderer",
+    "@types/node",
+    "@types/react",
+    "@types/web",
+    "eslint",
+    "prettier",
+    "react",
+    "react-dom",
+    "remotion",
+    "tsx",
+    "typescript",
+    "zod"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 4,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "Zenova": {
+   "lines": {
+    "Swift": 12800,
+    "Kotlin": 11573,
+    "Shell": 73
+   },
+   "deps": [
+    "androidx.activity:activity-compose",
+    "androidx.compose.foundation:foundation",
+    "androidx.compose.material3:material3",
+    "androidx.compose.material:material-icons-extended",
+    "androidx.compose.ui:ui",
+    "androidx.compose:compose-bom",
+    "androidx.core:core-ktx",
+    "androidx.lifecycle:lifecycle-process",
+    "androidx.lifecycle:lifecycle-runtime-compose",
+    "androidx.media3:media3-exoplayer",
+    "androidx.media3:media3-exoplayer-hls",
+    "androidx.media3:media3-session",
+    "androidx.work:work-runtime-ktx",
+    "io.coil-kt.coil3:coil-compose",
+    "io.coil-kt.coil3:coil-network-okhttp",
+    "io.github.junkfood02.youtubedl-android:ffmpeg",
+    "io.github.junkfood02.youtubedl-android:library",
+    "junit:junit",
+    "org.jellyfin.media3:media3-ffmpeg-decoder",
+    "org.jetbrains.kotlinx:kotlinx-coroutines-android",
+    "org.jetbrains.kotlinx:kotlinx-coroutines-guava",
+    "org.jetbrains.kotlinx:kotlinx-serialization-json",
+    "swiftpm"
+   ],
+   "infra": {
+    "Xcode": 1
+   },
+   "manifests": [
+    "android/build.gradle.kts",
+    "android/app/build.gradle.kts",
+    "Packages/ZenovaCore/Package.swift"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "bday_surprise": {
+   "lines": {
+    "HTML": 454,
+    "JavaScript": 249
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "bytelearn": {
+   "lines": {
+    "TypeScript": 7154,
+    "JavaScript": 38,
+    "CSS": 22
+   },
+   "deps": [
+    "@eslint/eslintrc",
+    "@heroicons/react",
+    "@radix-ui/react-slot",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@types/three",
+    "class-variance-authority",
+    "clsx",
+    "eslint",
+    "eslint-config-next",
+    "gsap",
+    "lucide-react",
+    "mermaid",
+    "next",
+    "react",
+    "react-dom",
+    "react-icons",
+    "react-mermaid",
+    "reactflow",
+    "skulpt",
+    "tailwind-merge",
+    "tailwindcss",
+    "three",
+    "tw-animate-css",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "d-store": {
+   "lines": {
+    "TypeScript": 22128,
+    "SQL": 1503,
+    "CSS": 312,
+    "JavaScript": 35
+   },
+   "deps": [
+    "@eslint/eslintrc",
+    "@radix-ui/react-alert-dialog",
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-label",
+    "@radix-ui/react-select",
+    "@radix-ui/react-separator",
+    "@radix-ui/react-slot",
+    "@supabase/ssr",
+    "@supabase/supabase-js",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@vitest/coverage-v8",
+    "axios",
+    "class-variance-authority",
+    "clsx",
+    "dotenv",
+    "embla-carousel-autoplay",
+    "embla-carousel-react",
+    "eslint",
+    "eslint-config-next",
+    "framer-motion",
+    "lucide-react",
+    "next",
+    "next-themes",
+    "radix-ui",
+    "react",
+    "react-dom",
+    "resend",
+    "sonner",
+    "tailwind-merge",
+    "tailwindcss",
+    "tw-animate-css",
+    "typescript",
+    "vitest",
+    "zustand"
+   ],
+   "infra": {},
+   "manifests": [
+    "d-store-web/package.json"
+   ],
+   "git": {
+    "repos": [
+     "d-store-web"
+    ],
+    "mine": 57,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "dbops-lab": {
+   "lines": {
+    "Python": 9590,
+    "Shell": 1073,
+    "SQL": 181,
+    "JavaScript": 162,
+    "Terraform": 131
+   },
+   "deps": [
+    "build-backend",
+    "dbops",
+    "dependencies",
+    "description",
+    "dev",
+    "include",
+    "markers",
+    "name",
+    "ops",
+    "readme",
+    "requires",
+    "requires-python",
+    "testpaths",
+    "version"
+   ],
+   "infra": {
+    "Compose": 1,
+    "Terraform": 4,
+    "Dockerfile": 1,
+    "Ansible": 126,
+    "GitHub Actions": 2
+   },
+   "manifests": [
+    "pyproject.toml"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 16,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "gym-leveling-desktop": {
+   "lines": {
+    "TypeScript": 20348,
+    "JavaScript": 1901,
+    "SQL": 301,
+    "CSS": 136
+   },
+   "deps": [
+    "@dnd-kit/core",
+    "@dnd-kit/modifiers",
+    "@dnd-kit/sortable",
+    "@dnd-kit/utilities",
+    "@eslint/eslintrc",
+    "@google/genai",
+    "@hookform/resolvers",
+    "@radix-ui/react-avatar",
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-dropdown-menu",
+    "@radix-ui/react-label",
+    "@radix-ui/react-popover",
+    "@radix-ui/react-select",
+    "@radix-ui/react-separator",
+    "@radix-ui/react-slot",
+    "@radix-ui/react-tabs",
+    "@radix-ui/react-toggle",
+    "@radix-ui/react-toggle-group",
+    "@radix-ui/react-tooltip",
+    "@supabase/auth-helpers-nextjs",
+    "@supabase/ssr",
+    "@supabase/supabase-js",
+    "@tabler/icons-react",
+    "@tailwindcss/postcss",
+    "@tanstack/react-table",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "class-variance-authority",
+    "clsx",
+    "date-fns",
+    "eslint",
+    "eslint-config-next",
+    "formidable",
+    "lucide-react",
+    "moment",
+    "next",
+    "next-cloudinary",
+    "next-themes",
+    "react",
+    "react-day-picker",
+    "react-dom",
+    "react-hook-form",
+    "recharts",
+    "sonner",
+    "stripe",
+    "tailwind-merge",
+    "tailwindcss",
+    "tailwindcss-animate",
+    "typescript",
+    "vaul",
+    "zod"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 14,
+    "others": 3,
+    "other_authors": {
+     "Yasas-Sri": 2,
+     "kavindihewawasam": 1
+    }
+   }
+  },
+  "holopaint-cloud": {
+   "lines": {
+    "JavaScript": 2313,
+    "Python": 1664,
+    "Terraform": 1529,
+    "CSS": 661,
+    "HTML": 208,
+    "Shell": 93
+   },
+   "deps": [
+    "aws-lambda-powertools",
+    "boto3",
+    "moto",
+    "numpy",
+    "onnx",
+    "onnxruntime",
+    "opencv-contrib-python-headless",
+    "pillow",
+    "pytest",
+    "torch"
+   ],
+   "infra": {
+    "Terraform": 28,
+    "GitHub Actions": 2,
+    "Dockerfile": 1
+   },
+   "manifests": [
+    "model/requirements.txt",
+    "worker/requirements.txt",
+    "worker/requirements-dev.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 19,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "imovie_assignment": {
+   "lines": {
+    "Python": 1738
+   },
+   "deps": [
+    "dash",
+    "gunicorn",
+    "matplotlib",
+    "numpy",
+    "openpyxl",
+    "pandas",
+    "plotly",
+    "scipy",
+    "seaborn"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "logic-gates-tiktok-promo": {
+   "lines": {
+    "HTML": 9286,
+    "Shell": 10
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "phptest": {
+   "lines": {
+    "PHP": 22,
+    "HTML": 17
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "portfolio3d": {
+   "lines": {
+    "TypeScript": 104,
+    "JavaScript": 22,
+    "CSS": 22
+   },
+   "deps": [
+    "@react-three/drei",
+    "@react-three/fiber",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "eslint",
+    "eslint-config-next",
+    "next",
+    "react",
+    "react-dom",
+    "tailwindcss",
+    "three",
+    "typescript",
+    "zustand"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "projects-team-5": {
+   "lines": {
+    "Python": 5051
+   },
+   "deps": [
+    "matplotlib",
+    "pyqt6"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 38,
+    "others": 28,
+    "other_authors": {
+     "Sakith Dewnith Fernando": 12,
+     "Mashi333": 11,
+     "SeminiAmanda": 3,
+     "Semini Amanda Sewwandi": 2
+    }
+   }
+  },
+  "sahan-portfolio": {
+   "lines": {
+    "TypeScript": 5885,
+    "CSS": 348,
+    "Python": 188,
+    "JavaScript": 22
+   },
+   "deps": [
+    "@react-three/drei",
+    "@react-three/fiber",
+    "@react-three/postprocessing",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "eslint",
+    "eslint-config-next",
+    "framer-motion",
+    "gsap",
+    "lenis",
+    "lucide-react",
+    "next",
+    "postprocessing",
+    "react",
+    "react-dom",
+    "tailwindcss",
+    "three",
+    "three-stdlib",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 2,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "seqlith-web": {
+   "lines": {
+    "TypeScript": 6700,
+    "CSS": 5711,
+    "JavaScript": 2020,
+    "Python": 778,
+    "HTML": 71
+   },
+   "deps": [
+    "@fontsource/jost",
+    "@react-three/drei",
+    "@react-three/fiber",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@types/three",
+    "@vitejs/plugin-react",
+    "browserforge",
+    "curl_cffi",
+    "framer-motion",
+    "lenis",
+    "lucide-react",
+    "patchright",
+    "react",
+    "react-dom",
+    "scrapling",
+    "three",
+    "typescript",
+    "vite"
+   ],
+   "infra": {
+    "Vercel": 1
+   },
+   "manifests": [
+    "package.json",
+    "tools/lead-finder/finder/requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 5,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "sfolium": {
+   "lines": {
+    "Jupyter": 350
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "test": {
+   "lines": {
+    "C++": 82,
+    "C": 71,
+    "Python": 51,
+    "HTML": 26,
+    "CSS": 24
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "testDNA": {
+   "lines": {
+    "Jupyter": 17
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "tsptest": {
+   "lines": {
+    "HTML": 17494,
+    "Jupyter": 7573,
+    "Python": 167
+   },
+   "deps": [
+    "folium",
+    "matplotlib",
+    "networkx",
+    "numpy",
+    "pandas"
+   ],
+   "infra": {},
+   "manifests": [
+    "shortest-path-analysis-srilanka/requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 4,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "vm_simulator": {
+   "lines": {
+    "Python": 5312
+   },
+   "deps": [
+    "matplotlib",
+    "pyqt6"
+   ],
+   "infra": {},
+   "manifests": [
+    "requirements.txt"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 5,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "voxel_demo": {
+   "lines": {
+    "Python": 182
+   },
+   "deps": [],
+   "infra": {},
+   "manifests": [],
+   "git": {
+    "repos": [],
+    "mine": 0,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "workthis": {
+   "lines": {
+    "Java": 359
+   },
+   "deps": [
+    "WorkThis",
+    "jjwt-api",
+    "jjwt-impl",
+    "jjwt-jackson",
+    "lombok",
+    "maven-compiler-plugin",
+    "postgresql",
+    "spring-boot-devtools",
+    "spring-boot-maven-plugin",
+    "spring-boot-starter-data-jpa",
+    "spring-boot-starter-parent",
+    "spring-boot-starter-security",
+    "spring-boot-starter-test",
+    "spring-boot-starter-web",
+    "spring-security-test"
+   ],
+   "infra": {},
+   "manifests": [
+    "pom.xml"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 2,
+    "other_authors": {
+     "Sandun Sulakshana": 2
+    }
+   }
+  },
+  "zpi-website": {
+   "lines": {
+    "TypeScript": 1349,
+    "CSS": 322,
+    "JavaScript": 16
+   },
+   "deps": [
+    "@eslint/eslintrc",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "clsx",
+    "eslint",
+    "eslint-config-next",
+    "lucide-react",
+    "next",
+    "react",
+    "react-dom",
+    "tailwind-merge",
+    "tailwindcss",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 24,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "zpi-website-corporate": {
+   "lines": {
+    "TypeScript": 1945,
+    "CSS": 324,
+    "JavaScript": 16
+   },
+   "deps": [
+    "@eslint/eslintrc",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "clsx",
+    "eslint",
+    "eslint-config-next",
+    "gsap",
+    "lucide-react",
+    "next",
+    "react",
+    "react-dom",
+    "tailwind-merge",
+    "tailwindcss",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  },
+  "zpi-website-v2": {
+   "lines": {
+    "TypeScript": 1349,
+    "CSS": 322,
+    "JavaScript": 16
+   },
+   "deps": [
+    "@eslint/eslintrc",
+    "@tailwindcss/postcss",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "clsx",
+    "eslint",
+    "eslint-config-next",
+    "lucide-react",
+    "next",
+    "react",
+    "react-dom",
+    "tailwind-merge",
+    "tailwindcss",
+    "typescript"
+   ],
+   "infra": {},
+   "manifests": [
+    "package.json"
+   ],
+   "git": {
+    "repos": [
+     "."
+    ],
+    "mine": 1,
+    "others": 0,
+    "other_authors": {}
+   }
+  }
+ },
+ "totals": {
+  "TypeScript": 340778,
+  "HTML": 55157,
+  "Python": 52170,
+  "Jupyter": 41864,
+  "CSS": 25498,
+  "JavaScript": 19963,
+  "Swift": 12909,
+  "Kotlin": 11760,
+  "C++": 6164,
+  "PHP": 4749,
+  "Astro": 3471,
+  "C": 3358,
+  "Java": 3233,
+  "SQL": 3039,
+  "Terraform": 1660,
+  "Shell": 1631,
+  "Pascal": 373,
+  "Dart": 304
+ }
+}

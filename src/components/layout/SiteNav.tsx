@@ -1,105 +1,123 @@
 "use client";
 
+import { CommandIcon, DownloadSimpleIcon } from "@phosphor-icons/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useScrollTo } from "@/components/providers/SmoothScrollProvider";
-import { NAV_SCROLL_OFFSET } from "@/lib/scroll";
-import { site } from "@/data/site";
-import { Scribble } from "@/components/ui/Scribble";
-import { ThemeToggle } from "./ThemeToggle";
+import { openPalette } from "@/components/layout/CommandPalette";
+import { SoundToggle } from "@/components/layout/SoundToggle";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
+import { navSections, site } from "@/data/site";
+import { cn } from "@/lib/cn";
 
-const NAV_ITEMS = [
-  { id: "work", label: "Work" },
-  { id: "research", label: "Research" },
-  { id: "about", label: "About" },
-  { id: "contact", label: "Contact" },
-] as const;
-
-// The book's name label, then the contents. The section you're reading gets a
-// red tick, the way a teacher marks a finished exercise.
+// A floating glass pill. Desktop: name, five sections with a scroll-spy, ⌘K, theme, CV.
+// Mobile: name, theme and a Menu button that opens the command palette (one menu, not two).
 export function SiteNav() {
-  const scrollTo = useScrollTo();
-  const [activeId, setActiveId] = useState<string>("");
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+  const { scrollTo } = useSmoothScroll();
+  const [current, setCurrent] = useState<string | null>(null);
 
   useEffect(() => {
-    const sections = ["hero", ...NAV_ITEMS.map((item) => item.id)]
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => Boolean(el));
-    if (sections.length === 0) return;
-
+    if (!onHome) return;
+    const targets = navSections.map((s) => document.getElementById(s.id)).filter(Boolean) as HTMLElement[];
+    if (!targets.length) return;
     const observer = new IntersectionObserver(
       (entries) => {
-        const mostVisible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (mostVisible) setActiveId(mostVisible.target.id);
+        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setCurrent(visible[0].target.id);
       },
-      { rootMargin: "-35% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5] },
     );
-
-    sections.forEach((section) => observer.observe(section));
+    targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
-  }, []);
+  }, [onHome]);
+
+  function onSectionClick(event: React.MouseEvent<HTMLAnchorElement>, id: string) {
+    if (!onHome) return;
+    event.preventDefault();
+    scrollTo(`#${id}`);
+    history.replaceState(null, "", `/#${id}`);
+  }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule bg-paper">
-      <nav aria-label="Primary" className="flex h-16 items-center justify-between gap-3 px-3 sm:px-6">
-        <button
-          type="button"
-          data-cursor="link"
-          onClick={() => scrollTo("#hero")}
-          aria-label="Sahan Perera — back to top"
-          className="group flex h-11 shrink-0 items-stretch overflow-hidden rounded-[5px] border-[1.5px] border-ink/70 bg-sheet text-left"
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-4 sm:pt-4">
+      <nav
+        aria-label="Primary"
+        className="glass pointer-events-auto flex h-14 w-full max-w-[1100px] items-center justify-between gap-2 rounded-full pl-5 pr-2"
+      >
+        <Link
+          href="/"
+          onClick={(event) => {
+            if (onHome) {
+              event.preventDefault();
+              scrollTo(0, { offset: 0 });
+              history.replaceState(null, "", "/");
+            }
+          }}
+          className="flex items-baseline gap-2 whitespace-nowrap text-[0.9375rem] font-normal tracking-[-0.01em]"
         >
-          <span className="hidden items-center border-r-[1.5px] border-ink/70 px-2 font-display text-sm font-semibold uppercase leading-none tracking-[0.08em] text-muted sm:flex">
-            Name
+          {site.name}
+          <span lang="si" className="hidden font-sinhala text-[0.875rem] text-fg-2 md:inline">
+            {site.nameSinhala}
           </span>
-          <span className="flex items-center px-2.5 pt-1 font-hand text-lg leading-none text-ink transition-transform duration-300 group-hover:-rotate-2 sm:px-3 sm:text-xl">
-            <span className="sm:hidden">S. Perera</span>
-            <span className="hidden sm:inline">{site.name}</span>
-          </span>
-        </button>
+        </Link>
 
-        <ul className="flex items-center gap-0.5 sm:gap-2" role="list">
-          {NAV_ITEMS.map((item) => {
-            const isActive = activeId === item.id;
-            return (
-              <li key={item.id}>
-                <button
-                  type="button"
-                  data-cursor="link"
-                  onClick={() => scrollTo(`#${item.id}`, { offset: NAV_SCROLL_OFFSET })}
-                  aria-current={isActive ? "true" : undefined}
-                  className={`relative flex h-11 items-center px-1.5 font-display text-base font-semibold transition-colors sm:px-3 sm:text-lg ${
-                    isActive ? "text-ink" : "text-muted hover:text-ink"
-                  }`}
-                >
-                  {isActive && (
-                    <Scribble
-                      key={item.id}
-                      kind="tick"
-                      duration={0.35}
-                      className="absolute -left-1 top-0.5 h-3 w-3 text-pen sm:-left-2.5 sm:top-2 sm:h-4 sm:w-4"
-                      strokeWidth={2.75}
-                    />
+        <ul className="hidden items-center gap-1 lg:flex">
+          {navSections.map((s) => (
+            <li key={s.id}>
+              <a
+                href={`/#${s.id}`}
+                onClick={(event) => onSectionClick(event, s.id)}
+                aria-current={current === s.id ? "true" : undefined}
+                className={cn(
+                  "relative inline-flex h-10 items-center rounded-full px-4 text-[0.875rem] transition-colors duration-300",
+                  current === s.id ? "text-fg" : "text-fg-2 hover:text-fg",
+                )}
+              >
+                {s.label}
+                <span
+                  aria-hidden
+                  className={cn(
+                    "absolute bottom-1.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent transition-opacity duration-300",
+                    current === s.id ? "opacity-100" : "opacity-0",
                   )}
-                  <span className="relative">{item.label}</span>
-                </button>
-              </li>
-            );
-          })}
+                />
+              </a>
+            </li>
+          ))}
         </ul>
 
-        <div className="flex shrink-0 items-center gap-1 sm:gap-3">
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={openPalette}
+            className="hidden h-10 items-center gap-1.5 rounded-full px-3 text-[0.875rem] text-fg-2 transition-colors hover:bg-fg/[0.07] hover:text-fg sm:inline-flex"
+            aria-label="Open command menu"
+            aria-keyshortcuts="Meta+K Control+K"
+          >
+            <CommandIcon aria-hidden size={15} />
+            <span className="font-mono text-[0.8125rem]">K</span>
+          </button>
+          <SoundToggle />
+          <ThemeToggle />
           <a
-            href={site.resumeUrl}
+            href={site.cvUrl}
             target="_blank"
-            rel="noopener noreferrer"
-            data-cursor="link"
-            className="hidden h-11 items-center font-display text-lg font-semibold text-pen underline decoration-2 underline-offset-4 md:flex"
+            rel="noopener"
+            className="hidden h-10 items-center gap-2 rounded-full bg-fg pl-4 pr-3 text-[0.875rem] font-normal text-bg transition-colors hover:bg-fg/90 sm:inline-flex"
           >
             CV
+            <DownloadSimpleIcon aria-hidden size={15} />
           </a>
-          <ThemeToggle />
+          <button
+            type="button"
+            onClick={openPalette}
+            className="inline-flex h-10 items-center rounded-full bg-fg px-4 text-[0.875rem] font-normal text-bg sm:hidden"
+          >
+            Menu
+          </button>
         </div>
       </nav>
     </header>

@@ -1,17 +1,11 @@
-import { Hero } from "@/components/sections/hero/Hero";
-import { WorkSection } from "@/components/sections/work/WorkSection";
-import { ResearchSection } from "@/components/sections/research/ResearchSection";
-import { AboutSection } from "@/components/sections/about/AboutSection";
-import { ContactSection } from "@/components/sections/contact/ContactSection";
+import { HeroIntro } from "@/components/sections/hero/HeroIntro";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <WorkSection />
-      <ResearchSection />
-      <AboutSection />
-      <ContactSection />
+      <section id="top" aria-label="Introduction" className="container-x relative flex min-h-[100dvh] items-center pb-16 pt-32">
+        <HeroIntro />
+      </section>
     </>
   );
 }

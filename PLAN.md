@@ -38,7 +38,7 @@ was read but not used.
 
 1. **Hero**: particle portrait, name, positioning line, Sinhala name, availability, View work,
    Download CV, Use your hand.
-2. **Selected work**: pinned horizontal gallery of the eight flagships (vertical stack on phones
+2. **Selected work**: pinned horizontal gallery of the fifteen flagships (vertical stack on phones
    and under reduced motion).
 3. **Proof**: animated counters from real numbers, each linked to its project.
 4. **Operations**: a replay of real `dbops health` output from `../dbops-lab/results/`.
@@ -52,7 +52,7 @@ was read but not used.
 11. **Play**: the football arena and the hidden Konami reflex game, lazy.
 12. **Contact**: copy email, WhatsApp, LinkedIn, GitHub, CV, magnetic button, final shader.
 
-Also: `/work/[slug]` (eight case studies), `/cv` (redirects to the PDF), a 404 with the
+Also: `/work/[slug]` (fifteen case studies), `/cv` (redirects to the PDF), a 404 with the
 particles scattered, `sitemap.xml`, `robots.txt`, a designed 1200×630 Open Graph image.
 
 Content lives only in `src/data/`: `site.ts`, `projects.ts` (flagships + more),
@@ -102,7 +102,7 @@ real result files by `scripts/build-terminal.mjs`).
 - **Paper Shaders**: one grain-gradient behind the contact section, one low-intensity mesh
   gradient behind the proof strip; both paused when off screen, absent under reduced motion.
 - **Card distortion**: a single fixed WebGL overlay (raw WebGL, no three.js) that draws the
-  hovered card's image with a pointer ripple, so eight cards cost one context.
+  hovered card's image with a pointer ripple, so every card shares one context.
 - **Postprocessing**: only in the football arena (its existing pipeline). The portrait gets its
   glow from additive blending in the dark theme, so it needs no bloom pass.
 
@@ -131,6 +131,10 @@ real result files by `scripts/build-terminal.mjs`).
 5. **Hand mode**: MediaPipe, preview, gestures into the particle field.
 6. **Ship**: SEO (metadata, OG image, JSON-LD, sitemap, robots, `/cv`, 404), screenshot
    matrix, Lighthouse, `docs/QUALITY.md`, README.
+7. **More flagships**: D-Store SL, O/L ICT Practice, QR Attend, the Python, web development and
+   operating-systems courses, and the J'pura Astronomy Club site join the gallery as full case
+   studies (fifteen in all). Cards narrow to two per view on desktop so the pinned scroll stays
+   short.
 
 After each milestone: run the site, Playwright screenshots at 1440×900 and 390×844 in dark,
 light and reduced motion, fix, commit.

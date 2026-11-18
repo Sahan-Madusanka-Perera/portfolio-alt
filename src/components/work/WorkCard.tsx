@@ -14,7 +14,7 @@ export function WorkCard({ project, index, total, priority }: WorkCardProps) {
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="work-card group relative flex w-full flex-col gap-6 lg:motion-safe:w-[min(58vw,880px,calc((100svh-330px)*1.6))] lg:motion-safe:shrink-0">
+    <article className="work-card group relative flex w-full flex-col gap-6 lg:motion-safe:w-[min(44vw,720px,calc((100svh-330px)*1.6))] lg:motion-safe:shrink-0">
       <TransitionLink
         href={`/work/${project.slug}`}
         aria-label={`${project.title}: read the case study`}

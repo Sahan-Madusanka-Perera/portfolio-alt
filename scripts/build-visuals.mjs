@@ -132,3 +132,31 @@ ${inner}
   writeFileSync(join(out, "singector.svg"), frame(inner));
   console.log("singector.svg");
 }
+
+// 4. QR Attend: the four server-side gates a scan must clear, in order (attendance.routes.js).
+{
+  const gates = [
+    ["1", "Token", "AES-256-CBC, fresh IV, dies 15 s after it is minted"],
+    ["2", "Enrolment", "the student is enrolled in this course"],
+    ["3", "Device", "FingerprintJS id matches the one bound on first use"],
+    ["4", "Position", "ST_Contains(classroom.geofence, ST_Point(lng, lat))"],
+  ];
+  const rows = gates.map(([n, name, detail], i) => {
+    const y = 300 + i * 150;
+    return [
+      `<circle cx="168" cy="${y}" r="34" fill="none" stroke="${i === 3 ? ACCENT : FG2}" stroke-width="3"/>`,
+      `<text x="168" y="${y + 11}" text-anchor="middle" fill="${i === 3 ? ACCENT : FG}" font-family="${MONO}" font-size="30">${n}</text>`,
+      i < 3 ? `<path d="M168 ${y + 34} V${y + 116}" stroke="${LINE}" stroke-width="3"/>` : "",
+      `<text x="250" y="${y - 4}" fill="${FG}" font-family="${SANS}" font-size="44" font-weight="300">${name}</text>`,
+      `<text x="250" y="${y + 40}" fill="${FG2}" font-family="${MONO}" font-size="24">${esc(detail)}</text>`,
+    ].join("");
+  });
+  const inner = [
+    `<text x="134" y="150" fill="${FG}" font-family="${SANS}" font-size="44" font-weight="300">A check-in has to clear all four</text>`,
+    `<text x="134" y="198" fill="${FG3}" font-family="${SANS}" font-size="26">Run on the server in this order; the first refusal is returned and shown.</text>`,
+    rows.join("\n"),
+    `<text x="1466" y="900" text-anchor="end" fill="${FG3}" font-family="${MONO}" font-size="22">the projector mints a new code every 10 s</text>`,
+  ].join("\n");
+  writeFileSync(join(out, "qr-attend.svg"), frame(inner));
+  console.log("qr-attend.svg");
+}

@@ -80,12 +80,12 @@ Gzipped, from `.next/static` after `npm run build`.
 
 ## Other checks
 
-- **Links.** All 9 pages crawled, 54 unique links checked. None is broken. LinkedIn answers
+- **Links.** All 16 pages crawled, 78 unique links checked (M7). None is broken. LinkedIn answers
   automated requests with status 999 (its bot wall); the profile URL is correct. Canonical
   links point at `localhost:3000` in a local build and at the production URL on Vercel (see
   the README).
 - **Console.** The screenshot runner records console errors, page errors, failed requests and
-  HTTP errors on every capture. The M4, M5 and M6 runs have none except the intended 404 on
+  HTTP errors on every capture. The M4 to M7 runs have none except the intended 404 on
   `/nope`. Hand mode logs MediaPipe's own GPU warnings (not errors) while it runs.
 - **Reduced motion.** Every capture set includes a `reduced` variant: no loader, no reveals, no
   marquee, still portrait, terminal shown whole, no smooth scroll, no hand mode.
@@ -97,5 +97,10 @@ Gzipped, from `.next/static` after `npm run build`.
 
 ## Screenshots
 
-`docs/screenshots/m1` to `m6`, each at 1440x900 and 390x844 in dark, light and reduced motion.
-M4 has one set per home-page section; M6 has the home page, two case studies and the 404.
+`docs/screenshots/m1` to `m7`, each at 1440x900 and 390x844 in dark, light and reduced motion.
+M4 has one set per home-page section; M6 has the home page, two case studies and the 404; M7
+has the fifteen-card gallery and the seven new case studies.
+
+Re-measured at M7 with fifteen case studies (mobile, simulated throttling): `/` 99/100/100/100
+(LCP 1.1 s, CLS 0), `/work/ol-ict-practice` 90/100/100/100 and `/work/d-store` 91/100/100/100
+(LCP 3.6 s for the reason above, CLS 0).

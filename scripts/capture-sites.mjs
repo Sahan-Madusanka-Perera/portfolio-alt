@@ -11,14 +11,21 @@ import sharp from "sharp";
 
 const sites = [
   { url: "https://sahan-madusanka-perera.github.io/holopaint-cloud/", file: "holopaint-cloud.webp" },
+  { url: "https://python-al-learning-platform.vercel.app", file: "python-al.webp" },
+  { url: "https://web-dev-study-partner.vercel.app", file: "web-dev-study-partner.webp" },
+  { url: "https://oslearningplatform.vercel.app", file: "os-learning.webp" },
+  { url: "https://japuraastro.lk", file: "japura-astro.webp" },
+  { url: "https://dstorelk.com", file: "d-store.webp" },
 ];
+// Pass file names to capture only those, e.g. node scripts/capture-sites.mjs japura-astro.webp
+const only = process.argv.slice(2);
 
 const out = resolve("public/work");
 mkdirSync(out, { recursive: true });
 
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, colorScheme: "dark" });
-for (const site of sites) {
+for (const site of sites.filter((s) => !only.length || only.includes(s.file))) {
   const page = await context.newPage();
   await page.goto(site.url, { waitUntil: "networkidle", timeout: 60_000 });
   await page.waitForTimeout(1500);

@@ -68,7 +68,7 @@ export function WorkSection() {
           className="text-[clamp(2.5rem,5.4vw,5.5rem)] font-light leading-[1.02] tracking-[-0.042em]"
         />
         <Reveal as="p" className="max-w-[40ch] text-[clamp(1.125rem,1.5vw,1.375rem)] leading-[1.45] text-fg-2">
-          Eight projects, each with a case study: the problem, what I built, and the part that fought back.
+          {flagships.length} projects, each with a case study: the problem, what I built, and the part that fought back.
         </Reveal>
       </div>
 

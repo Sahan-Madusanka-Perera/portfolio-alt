@@ -262,6 +262,26 @@ html[data-loader="skip"] .loader {
   }
 }
 
+/* 404: the shot over the bar. The ball follows samples of the arc; the trail fades in behind it. */
+.nf-ball {
+  transform: translate(460px, 60px);
+  animation: nf-ball 1.1s var(--ease) 0.3s both;
+}
+.nf-shot {
+  animation: nf-shot 1.1s var(--ease) 0.3s both;
+}
+@keyframes nf-ball {
+  0% { transform: translate(40px, 206px); }
+  25% { transform: translate(145px, 105px); }
+  50% { transform: translate(250px, 47px); }
+  75% { transform: translate(355px, 32px); }
+  100% { transform: translate(460px, 60px); }
+}
+@keyframes nf-shot {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* Scroll reveal (see components/ui/Reveal.tsx). Hidden only when JavaScript is running. */
 .js [data-reveal] {
   opacity: 0;
@@ -455,6 +475,10 @@ html[data-loader="skip"] .loader {
     animation: none;
   }
   .caret {
+    animation: none;
+  }
+  .nf-ball,
+  .nf-shot {
     animation: none;
   }
   .js [data-reveal] {

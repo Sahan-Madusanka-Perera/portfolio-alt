@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 import Link from "next/link";
-import { useRef, type MouseEvent, type ReactNode } from "react";
+import { useEffect, useRef, type MouseEvent, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 type Variant = "primary" | "ghost" | "accent";
@@ -36,22 +35,42 @@ const iconWrap: Record<Variant, string> = {
 // icon sits in its own circle and nudges diagonally on hover. Still under reduced motion.
 export function MagneticButton(props: AsLink | AsButton) {
   const { children, variant = "primary", icon, className, strength = 0.28, size = "md" } = props;
-  const reduced = useReducedMotion();
   const ref = useRef<HTMLSpanElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const sx = useSpring(x, { stiffness: 220, damping: 18, mass: 0.6 });
-  const sy = useSpring(y, { stiffness: 220, damping: 18, mass: 0.6 });
+  const spring = useRef({ x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0, raf: 0, last: 0 });
+
+  useEffect(() => {
+    const s = spring.current;
+    return () => cancelAnimationFrame(s.raf);
+  }, []);
+
+  // A small damped spring (stiffness 220, damping 18, mass 0.6), stepped per frame until it rests.
+  function step(now: number) {
+    const s = spring.current;
+    const dt = Math.min((now - (s.last || now)) / 1000, 1 / 30) || 1 / 60;
+    s.last = now;
+    s.vx += ((220 * (s.tx - s.x) - 18 * s.vx) / 0.6) * dt;
+    s.vy += ((220 * (s.ty - s.y) - 18 * s.vy) / 0.6) * dt;
+    s.x += s.vx * dt;
+    s.y += s.vy * dt;
+    const resting = Math.abs(s.tx - s.x) + Math.abs(s.ty - s.y) + Math.abs(s.vx) + Math.abs(s.vy) < 0.05;
+    if (resting) Object.assign(s, { x: s.tx, y: s.ty, vx: 0, vy: 0, raf: 0, last: 0 });
+    if (ref.current) ref.current.style.transform = s.x || s.y ? `translate3d(${s.x.toFixed(2)}px, ${s.y.toFixed(2)}px, 0)` : "";
+    if (!resting) s.raf = requestAnimationFrame(step);
+  }
+  function aim(tx: number, ty: number) {
+    const s = spring.current;
+    s.tx = tx;
+    s.ty = ty;
+    if (!s.raf) s.raf = requestAnimationFrame(step);
+  }
 
   function onMove(event: MouseEvent) {
-    if (reduced || !ref.current) return;
+    if (!ref.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const rect = ref.current.getBoundingClientRect();
-    x.set((event.clientX - (rect.left + rect.width / 2)) * strength);
-    y.set((event.clientY - (rect.top + rect.height / 2)) * strength);
+    aim((event.clientX - (rect.left + rect.width / 2)) * strength, (event.clientY - (rect.top + rect.height / 2)) * strength);
   }
   function onLeave() {
-    x.set(0);
-    y.set(0);
+    aim(0, 0);
   }
 
   const classes = cn(
@@ -113,8 +132,8 @@ export function MagneticButton(props: AsLink | AsButton) {
     );
 
   return (
-    <motion.span ref={ref} onMouseMove={onMove} onMouseLeave={onLeave} style={{ x: sx, y: sy }} className="inline-flex">
+    <span ref={ref} onMouseMove={onMove} onMouseLeave={onLeave} className="inline-flex">
       {body}
-    </motion.span>
+    </span>
   );
 }

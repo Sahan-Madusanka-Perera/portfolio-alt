@@ -5,7 +5,6 @@ import { CommandPalette } from "@/components/layout/CommandPalette";
 import { CursorFollower } from "@/components/layout/CursorFollower";
 import { Footer } from "@/components/layout/Footer";
 import { SiteNav } from "@/components/layout/SiteNav";
-import { MotionProvider } from "@/components/providers/MotionProvider";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { ThemeScript } from "@/components/providers/ThemeScript";
@@ -119,7 +118,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <ThemeProvider>
-          <MotionProvider>
             <SmoothScrollProvider>
               <SiteNav />
               <main id="main" tabIndex={-1} className="outline-none">
@@ -129,7 +127,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <CommandPalette />
               <CursorFollower />
             </SmoothScrollProvider>
-          </MotionProvider>
         </ThemeProvider>
         <div className="grain" aria-hidden />
       </body>

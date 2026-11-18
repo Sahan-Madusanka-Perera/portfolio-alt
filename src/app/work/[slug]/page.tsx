@@ -89,7 +89,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
             className="relative aspect-[16/10] overflow-hidden rounded-[20px] bg-bg-2 ring-1 ring-inset ring-line"
             style={{ viewTransitionName: `work-${project.slug}` }}
           >
-            <Image src={project.visual.src} alt={project.visual.alt} fill priority sizes="(min-width: 1440px) 1300px, 100vw" className="object-cover" unoptimized={isSvg} />
+            <Image src={project.visual.src} alt={project.visual.alt} fill loading="eager" fetchPriority="high" sizes="(min-width: 1440px) 1300px, 100vw" className="object-cover" unoptimized={isSvg} />
           </div>
           <figcaption className="mt-3 text-[0.875rem] text-fg-2">{project.visual.source}</figcaption>
         </figure>

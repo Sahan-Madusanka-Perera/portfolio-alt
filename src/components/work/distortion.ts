@@ -1,3 +1,4 @@
+import { isSoftwareWebGL } from "@/lib/capabilities";
 // One WebGL context for every work card. On hover the canvas moves into the card's media frame,
 // draws that card's image and bends it around the pointer: a soft lens, a ripple that follows
 // the pointer's speed, and a slight colour split along the direction of travel. When the pointer
@@ -256,7 +257,8 @@ export function getCardDistortion() {
   const ok =
     typeof window !== "undefined" &&
     window.matchMedia("(pointer: fine) and (hover: hover)").matches &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    !isSoftwareWebGL();
   try {
     shared = ok ? new CardDistortion() : null;
   } catch {

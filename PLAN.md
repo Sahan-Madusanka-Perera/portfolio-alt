@@ -65,9 +65,11 @@ real result files by `scripts/build-terminal.mjs`).
 - **Lenis** smooth scroll, ticked by GSAP's ticker and synced to **ScrollTrigger**; off under
   reduced motion and on touch devices (native scroll).
 - **GSAP ScrollTrigger**: the pinned work gallery, the terminal's start, section colour shifts.
-- **Motion (`motion/react`)**: entrance reveals, split-text headline (per word, transform only),
-  magnetic buttons (springs), the command palette, the case-study page enter, `AnimatePresence`
-  for overlays. Migrate the games from `framer-motion` to `motion`.
+- **Motion (`motion/react`)**: the football arena only (`AnimatePresence`, menu entrances),
+  migrated from `framer-motion`. As built, reveals and split text are CSS transitions, the
+  magnetic buttons use a small requestAnimationFrame spring, and the palette is a native
+  `<dialog>`, which keeps Motion (about 43 KB gzipped) out of the first load. See
+  docs/QUALITY.md.
 - **anime.js v4**: the architecture diagrams draw their lines on scroll, and the terminal's
   typed lines.
 - **View Transitions API**: the work card's visual morphs into the case-study hero

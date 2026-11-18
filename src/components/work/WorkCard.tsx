@@ -35,7 +35,7 @@ export function WorkCard({ project, index, total, priority }: WorkCardProps) {
             sizes="(min-width: 1024px) 60vw, 100vw"
             className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] motion-reduce:transition-none"
             unoptimized={isSvg}
-            priority={priority}
+            loading={priority ? "eager" : undefined}
           />
         </div>
       </TransitionLink>
@@ -43,7 +43,7 @@ export function WorkCard({ project, index, total, priority }: WorkCardProps) {
       <div className="grid gap-3 sm:grid-cols-[auto_1fr_auto] sm:items-baseline sm:gap-6">
         <p className="font-mono text-[0.8125rem] text-fg-2 tabular">
           {number}
-          <span className="text-fg-3"> / {String(total).padStart(2, "0")}</span>
+          <span className="text-fg-2"> / {String(total).padStart(2, "0")}</span>
         </p>
         <div className="min-w-0">
           <h3 className="text-[clamp(1.75rem,2.6vw,2.5rem)] font-light leading-[1.1] tracking-[-0.03em]">

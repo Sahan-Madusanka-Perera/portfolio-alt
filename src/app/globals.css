@@ -384,6 +384,13 @@ html[data-loader="skip"] .loader {
   }
 }
 
+/* Architecture diagrams: hidden only once anime.js is ready to draw them (see ArchitectureDiagram). */
+.dg.is-ready:not(.is-drawn) .dg-node,
+.dg.is-ready:not(.is-drawn) .dg-head,
+.dg.is-ready:not(.is-drawn) .dg-label {
+  opacity: 0;
+}
+
 /* Caret for the terminal replay. */
 .caret {
   display: inline-block;
@@ -450,5 +457,12 @@ html[data-loader="skip"] .loader {
   }
   .cursor-ring {
     display: none;
+  }
+}
+
+/* Phones: the diagram scrolls sideways; the right edge fades until the end is reached. */
+@media (max-width: 639px) {
+  .dg-scroll:not([data-end="1"]) {
+    mask-image: linear-gradient(to right, #000 82%, transparent);
   }
 }

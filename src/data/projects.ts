@@ -121,14 +121,14 @@ export const flagships: Flagship[] = [
     diagram: {
       title: "From upload to colouring page",
       nodes: [
-        { id: "page", label: "Demo page", sub: "hand tracking on device", x: 110, y: 150, tone: "accent" },
-        { id: "api", label: "HTTP API", sub: "5 req/s, api Lambda", x: 370, y: 90 },
-        { id: "ddb", label: "DynamoDB", sub: "job status, 1-day TTL", x: 640, y: 90 },
-        { id: "s3", label: "S3", sub: "photos and outlines", x: 370, y: 300 },
-        { id: "sqs", label: "SQS", sub: "jobs", x: 600, y: 300 },
-        { id: "dlq", label: "Dead-letter queue", sub: "after 3 failures", x: 600, y: 470, tone: "muted" },
-        { id: "worker", label: "Worker Lambda", sub: "arm64, ONNX INT8", x: 870, y: 300, tone: "accent" },
-        { id: "cw", label: "CloudWatch", sub: "dashboard, 5 alarms", x: 870, y: 470, tone: "muted" },
+        { id: "page", label: "Demo page", sub: "hand tracking on device", x: 130, y: 280, tone: "accent" },
+        { id: "api", label: "HTTP API", sub: "5 req/s, api Lambda", x: 400, y: 90 },
+        { id: "ddb", label: "DynamoDB", sub: "job status, 1-day TTL", x: 660, y: 90 },
+        { id: "s3", label: "S3", sub: "photos and outlines", x: 400, y: 470 },
+        { id: "sqs", label: "SQS", sub: "jobs", x: 660, y: 280 },
+        { id: "dlq", label: "Dead-letter queue", sub: "after 3 failures", x: 660, y: 470, tone: "muted" },
+        { id: "worker", label: "Worker Lambda", sub: "arm64, ONNX INT8", x: 880, y: 280, tone: "accent" },
+        { id: "cw", label: "CloudWatch", sub: "dashboard, 5 alarms", x: 880, y: 470, tone: "muted" },
       ],
       edges: [
         { from: "page", to: "api", label: "create job" },
@@ -205,10 +205,10 @@ export const flagships: Flagship[] = [
         { id: "cli", label: "dbops CLI", sub: "health, backup, slow, access", x: 140, y: 280, tone: "accent" },
         { id: "oracle", label: "Oracle 23ai", sub: "RMAN, tablespaces", x: 470, y: 80 },
         { id: "maria", label: "MariaDB primary", sub: "GTID, slow log", x: 470, y: 210 },
-        { id: "replica", label: "MariaDB replica", sub: "read_only", x: 760, y: 210 },
+        { id: "replica", label: "MariaDB replica", sub: "read_only", x: 800, y: 210 },
         { id: "mongo", label: "MongoDB rs0", sub: "3 members", x: 470, y: 340 },
         { id: "pg", label: "PostgreSQL 17", sub: "pg_stat_statements", x: 470, y: 470 },
-        { id: "verdict", label: "Exit code", sub: "0 OK, 1 WARN, 2 CRIT", x: 800, y: 420, tone: "accent" },
+        { id: "verdict", label: "Exit code", sub: "0 OK, 1 WARN, 2 CRIT", x: 140, y: 470, tone: "accent" },
       ],
       edges: [
         { from: "cli", to: "oracle" },
@@ -291,9 +291,9 @@ export const flagships: Flagship[] = [
       nodes: [
         { id: "ui", label: "SwiftUI views", sub: "iPhone, iPad, Mac", x: 140, y: 280, tone: "accent" },
         { id: "state", label: "App state", sub: "one source of truth", x: 400, y: 280 },
-        { id: "core", label: "ZenovaCore", sub: "library, queue, lyrics timing", x: 660, y: 160 },
-        { id: "store", label: "user-state.json", sub: "favourites, playlists, history", x: 660, y: 400 },
-        { id: "online", label: "Audius, LRCLIB, MusicBrainz", sub: "off by default", x: 880, y: 280, tone: "muted" },
+        { id: "core", label: "ZenovaCore", sub: "library, queue, lyrics timing", x: 560, y: 110 },
+        { id: "store", label: "user-state.json", sub: "favourites, playlists, history", x: 560, y: 450 },
+        { id: "online", label: "Audius, LRCLIB, MusicBrainz", sub: "off by default", x: 840, y: 280, tone: "muted" },
       ],
       edges: [
         { from: "ui", to: "state" },
@@ -351,7 +351,7 @@ export const flagships: Flagship[] = [
         { id: "gate", label: "Gate-closure rebuild", sub: "what was public at 09:50", x: 400, y: 150 },
         { id: "calib", label: "Calibration", sub: "14-day refit, 80% range", x: 400, y: 410 },
         { id: "api", label: "FastAPI", sub: "metrics, OpenAPI", x: 650, y: 280, tone: "accent" },
-        { id: "ui", label: "React views", sub: "Briefing, Accuracy, Explorer", x: 880, y: 280 },
+        { id: "ui", label: "React views", sub: "Briefing, Accuracy, Explorer", x: 866, y: 280 },
       ],
       edges: [
         { from: "elexon", to: "gate" },

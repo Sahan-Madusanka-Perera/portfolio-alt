@@ -2,6 +2,8 @@
 // Also collects console errors and failed requests, and fails (exit 1) if there are any.
 //
 //   node scripts/screenshots.mjs --label m1 [--base http://localhost:3100] [--paths /,/work/dbops-lab] [--full]
+//                                [--at "#work"] [--offset 1200] [--suffix work]
+//   --at scrolls to an element first (plus --offset px), --suffix names the shot.
 //
 // Expects a running server (next start). Images land in docs/screenshots/<label>/.
 import { mkdir } from "node:fs/promises";
@@ -19,6 +21,9 @@ const base = args.base ?? "http://localhost:3100";
 const label = args.label ?? "latest";
 const paths = (args.paths ?? "/").split(",");
 const fullPage = Boolean(args.full);
+const at = typeof args.at === "string" ? args.at : null;
+const offset = Number(args.offset ?? 0);
+const suffix = typeof args.suffix === "string" ? `-${args.suffix}` : "";
 const outDir = path.join("docs", "screenshots", label);
 
 const viewports = [
@@ -67,8 +72,26 @@ for (const vp of viewports) {
       await page.goto(base + p, { waitUntil: "networkidle" });
       // Let the loader leave and the first reveals play.
       await page.waitForTimeout(mode.reducedMotion === "reduce" ? 400 : 2600);
+      if (at) {
+        await page.evaluate(
+          async ({ at, offset }) => {
+            const el = document.querySelector(at);
+            if (!el) return;
+            const top = el.getBoundingClientRect().top + window.scrollY + offset;
+            // Walk there so scroll-driven scenes (pins, reveals) update on the way.
+            const steps = 24;
+            const from = window.scrollY;
+            for (let i = 1; i <= steps; i++) {
+              window.scrollTo(0, from + ((top - from) * i) / steps);
+              await new Promise((r) => setTimeout(r, 40));
+            }
+          },
+          { at, offset },
+        );
+        await page.waitForTimeout(2600);
+      }
       const slug = p === "/" ? "home" : p.replace(/^\//, "").replace(/\//g, "_");
-      const file = path.join(outDir, `${slug}-${vp.name}-${mode.name}.png`);
+      const file = path.join(outDir, `${slug}${suffix}-${vp.name}-${mode.name}.png`);
       if (fullPage) {
         // Scroll through so every scroll reveal fires before the full-page capture.
         await page.evaluate(async () => {

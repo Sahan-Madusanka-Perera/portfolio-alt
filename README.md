@@ -94,6 +94,7 @@ projects in `../`:
 | `scripts/make-portrait.py` | Photo to particle point sets (`portrait-20k.bin`, `portrait-48k.bin`) and posters, using a cached depth map. Needs a venv with torch, transformers, pillow and numpy only when recomputing depth. |
 | `scripts/make-cutout.py` | Cuts the About photo out of its white background (pillow and numpy). |
 | `scripts/make-og.mjs` | Renders the 1200x630 Open Graph image with Playwright. |
+| `scripts/fetch-fonts.mjs` | Downloads the four fonts (OFL) from Google Fonts into `src/app/fonts/`, which `next/font/local` serves. |
 | `scripts/build-terminal.mjs` | Copies real `dbops health` runs from `../dbops-lab/results/` into `src/data/terminal.ts`. |
 | `scripts/build-visuals.mjs` | Builds work-card visuals from each project's real screenshots and numbers. |
 | `scripts/capture-sites.mjs` | Screenshots the live project sites for the work cards. |

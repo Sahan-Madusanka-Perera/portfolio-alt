@@ -13,8 +13,8 @@ const themes: Record<"dark" | "light", PortraitTheme> = {
   light: { ink: [0.078, 0.078, 0.075], accent: [0.169, 0.275, 0.788], additive: false },
 };
 
-/** Hand mode (and anything else) can steer the portrait through this event. */
-export type PortraitPointerDetail = { x: number; y: number; strength: number } | null;
+/** Hand mode (and anything else) can steer the portrait through this event, in viewport pixels. */
+export type PortraitPointerDetail = { clientX: number; clientY: number; strength: number } | null;
 export const PORTRAIT_POINTER_EVENT = "portrait:pointer";
 
 // The hero's particle portrait. Chooses between the live WebGL2 scene and the still 2D canvas,
@@ -145,7 +145,11 @@ export function HeroPortrait({ className }: { className?: string }) {
       // External steering, e.g. the visitor's hand.
       const onExternal = (event: Event) => {
         const detail = (event as CustomEvent<PortraitPointerDetail>).detail;
-        if (detail) gl.setPointer(detail.x, detail.y, detail.strength);
+        if (!detail) return gl.releasePointer();
+        const rect = canvas.getBoundingClientRect();
+        const x = ((detail.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = -(((detail.clientY - rect.top) / rect.height) * 2 - 1);
+        if (Math.abs(x) < 1.25 && Math.abs(y) < 1.25) gl.setPointer(x, y, detail.strength);
         else gl.releasePointer();
       };
       window.addEventListener(PORTRAIT_POINTER_EVENT, onExternal);

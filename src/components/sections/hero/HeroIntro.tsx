@@ -5,6 +5,7 @@ import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { SplitText } from "@/components/ui/SplitText";
 import { site } from "@/data/site";
+import { HandMode } from "./hand/HandMode";
 
 // The words of the first viewport. The name is plain server-rendered text (it is the LCP
 // element and must paint at once); the positioning line rises in after the loader.
@@ -52,6 +53,8 @@ export function HeroIntro() {
           Download CV
         </MagneticButton>
       </div>
+
+      <HandMode />
 
       <dl className="grid max-w-xl grid-cols-3 gap-6 border-t border-line pt-6 text-[0.875rem]">
         <div>

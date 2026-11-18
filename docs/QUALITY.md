@@ -56,6 +56,15 @@ The next lever would be less JavaScript before first paint on those pages (see b
 - **Layout shift.** The operations terminal's status bar changed height while the replay ran,
   shifting the rest of the page by 59 px on mobile. Both states now share one grid cell.
 
+### Fonts are self-hosted
+
+The first Vercel build failed inside `next/font/google` (Turbopack: "next/font/google queries
+have exactly one entry", after Vercel's adapter modified the config). It did not reproduce
+locally, even from a cold cache with a deployment id set. The four fonts now come from
+`src/app/fonts/` through `next/font/local`: the same woff2 files, subsets and weights Google
+Fonts serves (about 165 KB in all, fetched by `scripts/fetch-fonts.mjs`), so the build needs no
+network access for fonts.
+
 ## Bundle sizes
 
 Gzipped, from `.next/static` after `npm run build`.

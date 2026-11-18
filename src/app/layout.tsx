@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Abhaya_Libre, Instrument_Serif, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { CommandPalette } from "@/components/layout/CommandPalette";
 import { CursorFollower } from "@/components/layout/CursorFollower";
@@ -11,31 +11,35 @@ import { ThemeScript } from "@/components/providers/ThemeScript";
 import { site } from "@/data/site";
 import { siteUrl } from "@/lib/site-url";
 
-const interTight = Inter_Tight({
+// Self-hosted (scripts/fetch-fonts.mjs), so the build never fetches fonts: next/font/google
+// failed on Vercel's build adapter. Same files, subsets and weights Google Fonts serves.
+const interTight = localFont({
+  src: "./fonts/inter-tight-latin-normal-300-500.woff2",
   variable: "--font-inter-tight",
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: "300 500",
   display: "swap",
 });
-const instrumentSerif = Instrument_Serif({
+const instrumentSerif = localFont({
+  src: "./fonts/instrument-serif-latin-italic-400.woff2",
   variable: "--font-instrument-serif",
-  subsets: ["latin"],
   weight: "400",
   style: "italic",
   display: "swap",
 });
-const jetbrainsMono = JetBrains_Mono({
+const jetbrainsMono = localFont({
+  src: "./fonts/jetbrains-mono-latin-normal-400-500.woff2",
   variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "400 500",
   display: "swap",
   preload: false,
 });
 // Abhaya Libre is by Mooniak, a type foundry in Colombo, and carries Sinhala and Latin.
-const abhaya = Abhaya_Libre({
+const abhaya = localFont({
+  src: [
+    { path: "./fonts/abhaya-libre-sinhala-normal-500.woff2", weight: "500" },
+    { path: "./fonts/abhaya-libre-sinhala-normal-700.woff2", weight: "700" },
+  ],
   variable: "--font-abhaya",
-  subsets: ["sinhala"],
-  weight: ["500", "700"],
   display: "swap",
   preload: false,
 });

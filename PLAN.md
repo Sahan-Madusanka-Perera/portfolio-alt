@@ -78,11 +78,17 @@ real result files by `scripts/build-terminal.mjs`).
 
 ## 3D and shader plan
 
-- **Particle portrait** (R3F, one `THREE.Points` with a custom `ShaderMaterial`).
-  `scripts/make-portrait.py` runs Depth Anything V2 Small on `public/me/portrait.jpg`, masks the
-  white background, samples points weighted towards detail (edges, eyes, hair), and writes
-  `public/me/portrait-48k.bin` and `portrait-20k.bin` (int16 x/y/z + RGB, shuffled) plus
-  `portrait-poster.webp`, a still render of the same points for the poster and reduced motion.
+- **Particle portrait** (raw WebGL2, one `gl.POINTS` draw call, all motion in the vertex shader).
+  Built: `scripts/make-portrait.py` runs Depth Anything V2 Small on `public/me/portrait.jpg`,
+  cuts out the white background, applies local contrast so the eyes and mouth survive the
+  front light, samples points weighted towards detail and the face, and dissolves the body
+  towards the bottom. It writes `public/me/portrait-48k.bin` and `portrait-20k.bin` (int16 x/y/z
+  + uint8 brightness, shuffled) and `portrait-poster-{dark,light}.webp` (used for no-JS only).
+  *Change from the first plan:* R3F would put three.js (about 150 KB gzip) on the first
+  viewport's main thread, which is the biggest risk to the mobile Lighthouse score. The portrait
+  is a 5 KB module instead. R3F, drei and postprocessing still power the football arena, which is
+  lazy-loaded. The still fallback is drawn on a 2D canvas from the same points, so it is never an
+  LCP candidate and costs no extra download.
   The shader assembles the points from dust on load, breathes, tilts a few degrees towards the
   cursor and parts like sand around the pointer (and the visitor's fingertip in hand mode).
 - **Gaussian splat**: there is no `me.spz` / `.ply` / `.splat` yet, so the "See me in 3D" toggle
@@ -95,9 +101,8 @@ real result files by `scripts/build-terminal.mjs`).
   gradient behind the proof strip; both paused when off screen, absent under reduced motion.
 - **Card distortion**: a single fixed WebGL overlay (raw WebGL, no three.js) that draws the
   hovered card's image with a pointer ripple, so eight cards cost one context.
-- **Postprocessing**: subtle bloom on the portrait only on capable desktops. Depth of field and
-  interaction-only chromatic aberration are skipped if they cost frames (measured, see
-  `docs/QUALITY.md`).
+- **Postprocessing**: only in the football arena (its existing pipeline). The portrait gets its
+  glow from additive blending in the dark theme, so it needs no bloom pass.
 
 ## Performance budget
 
@@ -106,7 +111,7 @@ real result files by `scripts/build-terminal.mjs`).
 | Initial JS (first load, `/`) | under 200 KB gzip |
 | LCP (mobile, Lighthouse) | under 2.5 s; the LCP element is the SSR headline or loader text |
 | CLS | 0: the canvas sits in a fixed-size box behind the poster |
-| 3D chunk (three + r3f + portrait) | loaded after first paint, on idle |
+| Portrait module | about 5 KB, loaded after hydration; three.js only for the arena, on demand |
 | Portrait points | 48k desktop (about 0.4 MB), 20k phones |
 | WebGL | DPR capped at 2 (1.5 on phones); paused off screen and when the tab is hidden |
 | Fallback | no WebGL2, `saveData`, under 4 cores, or reduced motion: the static poster |

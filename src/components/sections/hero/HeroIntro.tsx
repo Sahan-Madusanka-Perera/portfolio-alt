@@ -12,8 +12,8 @@ export function HeroIntro() {
   const { scrollTo } = useSmoothScroll();
 
   return (
-    <div className="relative z-10 flex flex-col gap-8">
-      <p className="inline-flex w-fit items-center gap-2.5 rounded-full px-3.5 py-1.5 text-[0.875rem] text-fg-2 ring-1 ring-inset ring-line-2">
+    <div className="relative z-10 flex flex-col gap-6 lg:gap-8">
+      <p className="inline-flex w-fit items-center gap-2.5 rounded-full bg-bg/70 px-3.5 py-1.5 text-[0.875rem] text-fg-2 ring-1 ring-inset ring-line-2 backdrop-blur-md">
         <span aria-hidden className="relative flex h-2 w-2">
           <span className="absolute inset-0 animate-ping rounded-full bg-accent opacity-60 motion-reduce:hidden" />
           <span className="relative h-2 w-2 rounded-full bg-accent" />
@@ -25,7 +25,7 @@ export function HeroIntro() {
         Sahan
         <br />
         Perera
-        <span lang="si" className="mt-4 block font-sinhala text-[clamp(1.25rem,2.2vw,1.75rem)] font-medium tracking-normal text-fg-2">
+        <span lang="si" className="mt-3 block lg:mt-4 font-sinhala text-[clamp(1.25rem,2.2vw,1.75rem)] font-medium tracking-normal text-fg-2">
           {site.nameSinhala}
         </span>
       </h1>

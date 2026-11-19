@@ -16,7 +16,7 @@ export const experience: TimelineEntry[] = [
     links: [{ label: "zeuspower.lk", href: "https://zeuspower.lk" }],
   },
   {
-    period: "2025 to now",
+    period: "Nov 2026 to now",
     title: "Founder",
     org: "Seqlith",
     detail:
@@ -24,7 +24,7 @@ export const experience: TimelineEntry[] = [
     links: [{ label: "seqlith.com", href: "https://www.seqlith.com" }],
   },
   {
-    period: "Nov 2025 to now",
+    period: "Nov 2025 to Nov 2026",
     title: "Director, Media and Marketing",
     org: "J'pura Astronomy Club, USJ",
     detail:

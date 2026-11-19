@@ -862,7 +862,7 @@ const entries: Flagship[] = [
     year: "2025 to 2026",
     result: "Tells members if tonight is worth it",
     summary:
-      "The website of the University of Sri Jayewardenepura's astronomy club, where I am Director of Media and Marketing: events, an astrophotography gallery, an e-magazine reader and live observing conditions for the club's own sky.",
+      "The website of the University of Sri Jayewardenepura's astronomy club, built while I was its Director of Media and Marketing: events, an astrophotography gallery, an e-magazine reader and live observing conditions for the club's own sky.",
     problem: [
       "A club site is usually a noticeboard. Members of an astronomy club want to know something more useful: is tonight dark and clear enough to bother?",
       "The committee also needed to run it without a developer: post events, add photos and publish each magazine issue themselves.",

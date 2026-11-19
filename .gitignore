@@ -47,3 +47,8 @@ PRODUCT.md
 scripts/.venv/
 scripts/.cache/
 __pycache__/
+
+# LaTeX build output for the CV (cv/sahan-perera-cv.tex); the PDF is kept
+/cv/*.aux
+/cv/*.log
+/cv/*.out

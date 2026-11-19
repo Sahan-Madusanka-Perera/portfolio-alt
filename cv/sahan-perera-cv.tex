@@ -1,0 +1,184 @@
+% Sahan Perera, CV. ATS-friendly by construction:
+%   one column, standard section names, no icons, no tables or text boxes for layout,
+%   real Unicode text behind every glyph (glyphtounicode), no hyphenation, visible URLs,
+%   and PDF metadata. Build: pdflatex sahan-perera-cv.tex (run twice).
+% Every fact comes from the portfolio's src/data, the project READMEs or Sahan's earlier CVs.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.96]{XCharter}
+\linespread{0.95}
+\usepackage{textcomp}
+\usepackage[a4paper,margin=1.25cm,top=0.95cm,bottom=0.85cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+\usepackage{microtype}
+
+% ATS: map every glyph to Unicode so copied or parsed text is real text.
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\hypersetup{
+  pdftitle={Sahan Perera - CV},
+  pdfauthor={Sahan Perera},
+  pdfsubject={Curriculum vitae},
+  pdfkeywords={Software Engineer, Full-Stack, React, TypeScript, Next.js, Python, FastAPI, AWS, Machine Learning, NLP, Intern},
+}
+
+% No hyphenation: a word split across lines reads as two words to a parser.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\sloppy
+\raggedright
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-0.55em}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{0.45em}{0.3em}
+
+\setlist[itemize]{leftmargin=1.1em,labelsep=0.45em,itemsep=0.05em,topsep=0.1em,parsep=0pt,partopsep=0pt}
+
+% \entry{Title}{Right-hand date}{Second line, left}{Second line, right}
+\newcommand{\entry}[4]{%
+  \textbf{#1}\hfill #2\par
+  \ifx\relax#3\relax\else{\itshape #3}\hfill{\itshape #4}\par\fi
+}
+% \project{Name}{Stack}{Link text or empty}
+\newcommand{\project}[3]{%
+  \textbf{#1}\ifx\relax#3\relax\else\ (#3)\fi\hfill{\itshape #2}\par
+}
+
+\begin{document}
+
+%-------------------------------------------------------------------- Header
+\begin{center}
+  {\LARGE\bfseries Sahan Perera}\par\vspace{0.25em}
+  Software Engineering Intern Candidate | Full-Stack, AI and Cloud\par\vspace{0.2em}
+  Piliyandala, Colombo, Sri Lanka | +94 76 946 5982 | \href{mailto:sahanpereraperera@gmail.com}{sahanpereraperera@gmail.com}\par
+  \href{https://sahanperera.vercel.app}{sahanperera.vercel.app} |
+  \href{https://www.linkedin.com/in/sahan-perera-64183b204/}{linkedin.com/in/sahan-perera-64183b204} |
+  \href{https://github.com/Sahan-Madusanka-Perera}{github.com/Sahan-Madusanka-Perera}\par\vspace{0.2em}
+  Available full-time, November 2026 to May 2027 | Graduating June 2027 | On-site, hybrid or remote
+\end{center}
+
+%-------------------------------------------------------------------- Summary
+\section{Summary}
+Final-year Computer Science undergraduate (GPA 3.90/4.00) who builds polished, well-tested web and mobile products in TypeScript, trains vision and language models from scratch in Python, and runs them reliably in the cloud. 1,400+ automated tests across projects and two peer-reviewed publications.
+
+%-------------------------------------------------------------------- Education
+\section{Education}
+\entry{University of Sri Jayewardenepura}{Jun 2023 -- Jun 2027 (expected)}{Bachelor of Computing (Honours) in Computer Science, Faculty of Computing}{GPA 3.90 / 4.00}
+Relevant modules: Machine Learning, Artificial Intelligence, Data Structures and Algorithms, Database Management Systems, Software Architecture and Design Patterns, Operating Systems, Computer Networks, Software Quality Assurance.\par\vspace{0.35em}
+\entry{Ananda College, Colombo}{2018 -- 2022}{G.C.E. Advanced Level, Physical Science (English medium)}{Z-score 1.6}
+\entry{ESOFT Metro Campus}{2019}{Diploma in Information Technology}{Best Performer}
+
+%-------------------------------------------------------------------- Experience
+\section{Experience}
+\entry{Freelance Full-Stack Developer}{2025 -- Present}{Client projects}{Colombo, Sri Lanka}
+\begin{itemize}
+  \item \textbf{D-Store SL} (dstorelk.com, pre-launch): built a full-stack e-commerce platform in Next.js, TypeScript and Supabase (PostgreSQL) with accounts, an admin dashboard and local payments, plus a Google Gemini feature that returns structured JSON, with a fallback and rate limits.
+  \item Led a pre-launch security review that closed four critical access-control holes (customers could make themselves admin or set their own order totals) with row-level security and server-side pricing; replayed nine attacks by hand, all blocked; 71 Vitest tests.
+  \item \textbf{Zeus Power International} (zeuspower.lk): delivered a production website end to end, from design and build to deployment and DNS (Next.js, TypeScript, Tailwind CSS). \textbf{Biz Guide}: an Astro site scoring 100 in all four Lighthouse categories on slow 4G.
+\end{itemize}
+\entry{Founder, Seqlith}{2025 -- Present}{}{}
+One-person product studio; designed and built seqlith.com in React and Three.js.\par\vspace{0.25em}
+\entry{Private ICT Tutor, G.C.E. A/L and O/L}{2023 -- Present}{}{}
+Teach programming, databases, networking and operating systems; this led to the learning platforms below.\par\vspace{0.25em}
+\entry{Director, Media and Marketing, J'pura Astronomy Club, USJ}{Nov 2025 -- Present}{}{}
+\begin{itemize}
+  \item Built the club's website, japuraastro.lk: events, an astrophotography gallery, a pdf.js e-magazine reader and live observing conditions from astronomical twilight and hourly cloud cover (Next.js 16, Supabase, GSAP); 28 commits, all mine.
+\end{itemize}
+
+%-------------------------------------------------------------------- Projects
+\section{Projects}
+\project{HoloPaint Cloud, AI photo-to-colouring-page service}{PyTorch, ONNX, AWS, Terraform}{live demo}
+\begin{itemize}
+  \item Trained a 31M-parameter U-Net from scratch to turn photos into outlines; compressed it with INT8 ONNX quantisation from 118.5 MB to 29.7 MB at 0.99 mean IoU, guarded by a CI parity gate that blocks any release below 0.97.
+  \item Event-driven pipeline on S3, SQS with a dead-letter queue, a container Lambda and DynamoDB, all in Terraform; in-browser MediaPipe hand tracking lets users paint by hand.
+  \item CodePipeline with live smoke tests rolled a broken release back in 18 seconds; patched the image from 12 HIGH CVEs to 0. Load-tested with k6: 7.7 s p95, 23 photos a minute, \$0.20 per 1,000 photos.
+\end{itemize}
+\project{DBOps Lab, multi-engine database operations}{Python, Bash, Ansible, Terraform, Docker}{GitHub}
+\begin{itemize}
+  \item Oracle 23ai, a MariaDB primary and replica with GTID replication, a three-member MongoDB replica set and PostgreSQL 17 in Docker, run by a Python CLI with Nagios-style exit codes and 71 tests.
+  \item Backups proven by restore (Oracle RMAN recovered to the backup's SCN, mariadb-backup, mongodump, pg\_dump), slow-query analysis whose index fixes made query mixes 1.4x to 16x faster, an 11-rule access review, a Terraform and Ansible MariaDB server, and four incident drills with postmortems.
+\end{itemize}
+\project{WindDesk, forecast decision tool for an energy trading desk}{React 19, TypeScript, FastAPI, Docker}{GitHub}
+\begin{itemize}
+  \item Rebuilt the wind forecast public at each auction's gate closure from Elexon's REST API (retries with back-off, checksummed snapshots).
+  \item A transparent calibration cut mean absolute error by 39\% (1,991 to 1,221 MW), and its 80\% range held the outturn 80.0\% of the time. FastAPI with OpenAPI docs; 95 pytest tests at 99\% coverage and 36 Vitest tests; one Docker image in CI.
+\end{itemize}
+\project{O/L ICT Practice Platform, adaptive exam practice}{Next.js, PostgreSQL, Drizzle, Zod}{GitHub}
+\begin{itemize}
+  \item 60 syllabus topics and 573 past-paper questions transcribed from 15 papers; Beta-posterior mastery with a 30-day recency half-life, so two right answers read as 67\%, not 100\%.
+  \item A database CHECK constraint and two independent reviewers stop unverified answers being published; answers never reach the browser before grading. 292 tests covering domain logic, auth and role-based access.
+\end{itemize}
+\project{Geofenced QR Attendance System}{React, Node.js, Express, PostgreSQL/PostGIS}{GitHub}
+\begin{itemize}
+  \item Four checks per check-in (AES-256-CBC QR token that expires after 15 seconds, enrolment, device binding, PostGIS geofence), with JWT auth, lecturer and student roles, rate limiting and server-sent events.
+  \item Idempotent SQL migrations, a Bash health check, an operations runbook, and 23 integration tests against real PostGIS in a four-stage GitHub Actions pipeline.
+\end{itemize}
+\project{Energy Disassembled, AI agent video pipeline}{TypeScript, Claude Code, Remotion, YouTube API}{}
+\begin{itemize}
+  \item Claude Code researches each episode from real sources to a written spec; a validator rejects unsourced claims; Remotion renders a private draft behind two human approval gates.
+\end{itemize}
+\project{ZENOVA and ChessOS, native and cross-platform apps}{SwiftUI, Kotlin, Expo, React Native}{}
+\begin{itemize}
+  \item ZENOVA: one SwiftUI music player for iPhone, iPad and Mac with Audius streaming and synced lyrics, plus a Kotlin and Compose Android version; 66 unit tests, 8 UI tests, zero warnings.
+  \item ChessOS: a shared TypeScript core for a React PWA and an Expo app, with Stockfish offline in a Web Worker or WebView; 30 lessons, 10 bot levels; 238 unit tests.
+\end{itemize}
+\project{A/L ICT learning platforms and PascalPath}{TypeScript, React, WebAssembly, Vitest, Playwright}{live}
+\begin{itemize}
+  \item Five live courses with 179 lessons where student code really runs in the browser: Python (CPython on Pyodide, offline), web development (PHP 8 and SQL on WebAssembly with a mysqli shim), operating systems, Arduino and networking (SignalLab).
+  \item Logic Gates Learning Lab: 656 Vitest tests, 136 Playwright runs on desktop and Pixel 7, axe-core checks on 19 pages. PascalPath: a Pascal interpreter written from scratch (about 3,800 lines) with a 331-test suite compared byte for byte against Free Pascal.
+\end{itemize}
+\project{Machine learning projects}{scikit-learn, XGBoost, LightGBM, TensorFlow, Keras, OpenCV}{}
+\begin{itemize}
+  \item Box-office revenue prediction: cleaned 1.27M raw records to 15,902 valid observations, ran five hypothesis tests, and a soft-voting ensemble reached R-squared 0.884 on held-out data (0.875 $\pm$ 0.003 in 5-fold cross-validation).
+  \item Facial emotion recognition: benchmarked five CNNs with two-stage transfer learning, 71.4\% accuracy and 0.710 weighted F1 on 24,143 test images. Psoriasis severity: ResNet-50 and EfficientNet-B0 features in a soft-voting ensemble, 91.7\% validation accuracy.
+\end{itemize}
+\project{Team projects}{Python, Docker, Power BI}{}
+\begin{itemize}
+  \item Emotion-based music recommender (team of 5): set up the repository and Docker Compose; merged 26 of the 43 pull requests that landed. Virtual memory simulator (team of 4): 38 of 66 commits.
+  \item iMovie streaming analytics (team of 6): led the analysis of 67 months of viewing data (42M+ views), built Power BI dashboards and compiled the 38-page report.
+\end{itemize}
+
+%-------------------------------------------------------------------- Research
+\section{Research and Publications}
+\project{SinGECToR, Sinhala grammatical error correction}{Python, PyTorch, Hugging Face Transformers}{}
+\begin{itemize}
+  \item Sampled 100k sentences from a 10.7M-sentence corpus with synthetic errors from a hand-built confusion set; trained an XLM-R edit tagger and a fine-tuned mBART-50 on a seeded 90k/5k/5k split: F0.5 0.538, 51.7\% exact match.
+  \item Wrote the evaluation from scratch (ERRANT has no Sinhala support), including a do-no-harm rate of 98.6\% on already-correct sentences.
+\end{itemize}
+\begin{itemize}
+  \item Data-Driven Sinhala Grammatical Error Correction: A Review of Corpora, Models, and Low-Resource Strategies. \textit{JCoS}, 2026. A synthesis of 44 studies.
+  \item Perera, S., et al. Cost-Benefit Analysis and Sustainability Considerations in Starting a Restaurant: A Case Study from Sri Lanka. \textit{Economics, Management and Sustainability}, 10(1), 165--178, 2025. DOI: \href{https://doi.org/10.14254/jems.2025.10-1.11}{10.14254/jems.2025.10-1.11}
+\end{itemize}
+
+%-------------------------------------------------------------------- Skills
+\section{Technical Skills}
+\begin{itemize}
+  \item \textbf{Languages:} TypeScript, JavaScript, Python, Java, SQL, Swift, Kotlin, PHP, Bash, HTML, CSS
+  \item \textbf{Frontend:} React 19, Next.js (App Router), Vite, Tailwind CSS, Radix UI, Zustand, Zod, React Query, Three.js, GSAP, Framer Motion, accessibility (WCAG AA); mobile: SwiftUI, Jetpack Compose, Expo, React Native
+  \item \textbf{Backend and databases:} Node.js, Express, FastAPI, Spring Boot, REST, JWT and session auth, PostgreSQL, PostGIS, Supabase (row-level security), Prisma, Drizzle, MySQL, MariaDB, Oracle (RMAN), MongoDB, DynamoDB
+  \item \textbf{Cloud and DevOps:} AWS (Lambda, S3, SQS, API Gateway, CloudWatch, IAM), Terraform, Ansible, Docker, Docker Compose, GitHub Actions, CodePipeline, Vercel, Linux, k6
+  \item \textbf{AI and machine learning:} PyTorch, TensorFlow, Keras, Hugging Face Transformers, scikit-learn, XGBoost, LightGBM, OpenCV, MediaPipe, ONNX Runtime, pandas, Gemini API, Claude Code, Power BI
+  \item \textbf{Testing:} Vitest, Playwright, Testing Library, pytest, JUnit 5, XCTest, axe-core, mypy (strict)
+\end{itemize}
+
+%-------------------------------------------------------------------- Activities
+\section{Leadership, Certifications and Languages}
+\begin{itemize}
+  \item \textbf{Leadership:} Quiz Master, J'pura Xtreme 2.0, IEEE Student Branch, USJ (2025) | Academic Panel, Association of Computing Students (2024)
+  \item \textbf{Certifications:} Google AI Professional Certificate (Coursera) | Meta Front-End Development and Programming with JavaScript (2024) | IBM Introduction to DevOps | TryHackMe Introduction to Cyber Security | Java Programming, SLIIT (2019)
+  \item \textbf{Languages:} Sinhala (native), English (professional working proficiency)
+\end{itemize}
+
+%-------------------------------------------------------------------- References
+\section{References}
+\textbf{Dr. Amila Deepal}, Senior Lecturer, Scientific Computing, USJ | deepal@sjp.ac.lk | +94 77 719 0632\par
+\textbf{Ms. Dilmi Praveena}, Lecturer, Knowledge Engineering and Communication, USJ | dilmipraveena@sjp.ac.lk | +94 77 204 9939
+
+\end{document}
